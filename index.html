@@ -8,7 +8,6 @@
       content="Resume for Aashaya Aryal, a Computer Science senior with experience in full-stack development and cloud solutions."
     />
     <!-- Tailwind CSS via CDN -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,73 +18,7 @@
     <link rel="icon" href="/assets/feather-icon.png" />
 
     <title>Aashaya Aryal - Resume</title>
-
-    <!-- Custom Colors & Button Styles -->
-    <style>
-      /* Define custom color variables for light mode */
-      :root {
-        --primary: #39426a;
-        --primary-foreground: var(--primary);
-        --secondary: #669999;
-        --secondary-foreground: #2e2e2e;
-        --bg-light: #f9fafb;
-        --text-light: #1f2937;
-      }
-
-      ::selection {
-        background-color: var(--secondary);
-        color: #dedede;
-      }
-
-      /* Dark mode color overrides */
-      .dark {
-        --primary: #b3e0ff;
-        --primary-foreground: #566c8d;
-        --secondary: #cc6666;
-        --secondary-foreground: var(--primary-foreground);
-        --bg-light: #1f2937;
-        --text-light: #f9fafb;
-      }
-
-      /* Apply our background & text colors using the CSS variables */
-      body {
-        background-color: var(--bg-light);
-        color: var(--text-light);
-        transition: background-color 0.3s, color 0.3s;
-      }
-
-      /* Use the primary color for headings */
-      h1,
-      h2 {
-        color: var(--primary);
-      }
-
-      /* Button styling */
-      .btn {
-        padding: 0.25rem 0.75rem; /* Smaller padding */
-        border-radius: 0.375rem;
-        font-weight: 600;
-        font-size: 0.875rem; /* Reduced font size */
-        transition: background-color 0.3s;
-      }
-      .btn-primary {
-        background-color: var(--primary-foreground);
-        color: #fff;
-        border: none;
-      }
-      .btn-primary:hover {
-        background-color: var(--secondary);
-      }
-      .btn-secondary {
-        background-color: var(--secondary);
-        color: #fff;
-        border: none;
-        cursor: pointer;
-      }
-      .btn-secondary:hover {
-        background-color: var(--primary-foreground);
-      }
-    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body class="transition-colors">
     <!-- Skip to Content Link for Accessibility -->
@@ -223,7 +156,7 @@
                 AWS Cloud Practitioner
               </a>
             </div>
-            <p class="text-sm text-gray-600 ml-8">Jan 2025</p>
+            <p class="text-sm ml-8">Jan 2025</p>
           </div>
         </div>
       </section>
@@ -369,32 +302,6 @@
     </footer>
 
     <!-- Dark Mode Toggle Script -->
-    <script>
-      function toggleDarkMode() {
-        const htmlEl = document.documentElement;
-        htmlEl.classList.toggle('dark');
-
-        const darkModeIcon = document.getElementById('darkModeIcon');
-
-        // Swap the icon: show a sun when dark mode is active, a moon when not.
-        if (htmlEl.classList.contains('dark')) {
-          darkModeIcon.classList.remove('fa-moon');
-          darkModeIcon.classList.add('fa-sun');
-        } else {
-          darkModeIcon.classList.remove('fa-sun');
-          darkModeIcon.classList.add('fa-moon');
-        }
-      }
-
-      // On page load, set the correct icon if theme is stored in localStorage (optional)
-      document.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.classList.add('dark');
-          document
-            .getElementById('darkModeIcon')
-            .classList.replace('fa-moon', 'fa-sun');
-        }
-      });
-    </script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
