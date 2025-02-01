@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+/* Custom styles */
+:root {
+  --primary: #39426a;
+  --primary-foreground: var(--primary);
+  --secondary: #669999;
+  --secondary-foreground: #2e2e2e;
+  --bg-light: #f9fafb;
+  --text-light: #1f2937;
+}
+
+::selection {
+  background-color: var(--secondary);
+  color: #dedede;
+}
+
+/* Dark mode color overrides */
+.dark {
+  --primary: #b3e0ff;
+  --primary-foreground: #566c8d;
+  --secondary: #cc6666;
+  --secondary-foreground: var(--primary-foreground);
+  --bg-light: #1f2937;
+  --text-light: #f9fafb;
+}
+
+/* Apply our background & text colors using the CSS variables */
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Use the primary color for headings */
+h1,
+h2 {
+  color: var(--primary);
+}
+
+/* Button styling */
+.btn {
+  padding: 0.25rem 0.75rem; /* Smaller padding */
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem; /* Reduced font size */
+  transition: background-color 0.3s;
+}
+.btn-primary {
+  background-color: var(--primary-foreground);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-foreground);
+}
