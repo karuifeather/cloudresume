@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Resume for Aashaya Aryal, a Computer Science senior with experience in full-stack development and cloud solutions."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="/assets/feather-icon.png" />
+
+    <title>Aashaya Aryal - Resume</title>
+
+    <!-- Custom Colors & Button Styles -->
+    <style>
+      /* Define custom color variables for light mode */
+      :root {
+        --primary: #39426a;
+        --primary-foreground: var(--primary);
+        --secondary: #669999;
+        --secondary-foreground: #2e2e2e;
+        --bg-light: #f9fafb;
+        --text-light: #1f2937;
+      }
+
+      ::selection {
+        background-color: var(--secondary);
+        color: #dedede;
+      }
+
+      /* Dark mode color overrides */
+      .dark {
+        --primary: #b3e0ff;
+        --primary-foreground: #566c8d;
+        --secondary: #cc6666;
+        --secondary-foreground: var(--primary-foreground);
+        --bg-light: #1f2937;
+        --text-light: #f9fafb;
+      }
+
+      /* Apply our background & text colors using the CSS variables */
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-light);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      /* Use the primary color for headings */
+      h1,
+      h2 {
+        color: var(--primary);
+      }
+
+      /* Button styling */
+      .btn {
+        padding: 0.25rem 0.75rem; /* Smaller padding */
+        border-radius: 0.375rem;
+        font-weight: 600;
+        font-size: 0.875rem; /* Reduced font size */
+        transition: background-color 0.3s;
+      }
+      .btn-primary {
+        background-color: var(--primary-foreground);
+        color: #fff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: var(--secondary);
+      }
+      .btn-secondary {
+        background-color: var(--secondary);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-secondary:hover {
+        background-color: var(--primary-foreground);
+      }
+    </style>
+  </head>
+  <body class="transition-colors">
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only"
+      >Skip to content</a
+    >
+
+    <!-- Header / Name, Contact & CTA Buttons -->
+    <header class="shadow">
+      <div class="max-w-4xl mx-auto px-4 py-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between"
+        >
+          <!-- Name -->
+          <div>
+            <h1 class="text-2xl font-bold">Aashaya Aryal</h1>
+          </div>
+          <!-- Contact & Buttons -->
+          <div
+            class="flex flex-col md:flex-row md:items-center md:space-x-4 mt-4 md:mt-0"
+          >
+            <!-- Contact Information -->
+            <div class="text-sm flex flex-wrap items-center space-x-2">
+              <a href="mailto:aryalaashaya@gmail.com" class="hover:underline">
+                aryalaashaya@gmail.com
+              </a>
+              <span>|</span>
+              <a
+                href="https://karuifeather.com"
+                class="hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                karuifeather.com
+              </a>
+            </div>
+            <!-- CTA Buttons -->
+            <div class="mt-2 md:mt-0 flex space-x-2">
+              <!-- Download Resume Button -->
+              <a
+                href="resume.pdf"
+                download
+                class="btn btn-primary flex items-center space-x-1 group transition-all duration-150 ease-in-out transform hover:scale-105 active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-cloud-arrow-down text-lg transition-all duration-150 ease-in-out"
+                ></i>
+              </a>
+              <!-- Toggle Dark Mode Button -->
+              <button
+                onclick="toggleDarkMode()"
+                class="btn btn-secondary flex items-center space-x-1 group transition-all duration-150 ease-in-out transform hover:scale-105 active:scale-95"
+              >
+                <i
+                  id="darkModeIcon"
+                  class="fas fa-moon text-lg transition-all duration-150 ease-in-out"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <!-- About Me Section -->
+      <section id="about">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          About Me
+        </h2>
+        <p class="mt-2 leading-relaxed">
+          Computer Science senior with hands-on experience building and
+          deploying full-stack applications using Angular, React, and
+          Express/Lambda on AWS. Skilled in designing robust cloud solutions,
+          integrating CI/CD pipelines, and writing clean, well-tested code.
+          Passionate about creating secure, scalable apps that meet real user
+          needs, and eager to contribute to a collaborative, growth-oriented
+          environment.
+        </p>
+      </section>
+
+      <!-- Technical Skills Section -->
+      <section id="skills">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          Technical Skills
+        </h2>
+        <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+          <li>
+            <strong>Programming Languages:</strong> TypeScript, JavaScript,
+            Python, Java
+          </li>
+          <li>
+            <strong>Fullstack Tech:</strong> Angular, React, Redux, Node.js,
+            Express, AWS Lambda, Next.js, NestJS, Tailwind CSS
+          </li>
+          <li>
+            <strong>Databases:</strong> MongoDB, Apache Cassandra, PostgreSQL,
+            MySQL, Redis, AWS RDS, AWS Aurora
+          </li>
+          <li>
+            <strong>DevOps &amp; Tools:</strong> Terraform, Docker, Linux,
+            Nginx, Git, GitHub Workflows, GitHub Actions, Nx, Webpack
+          </li>
+          <li>
+            <strong>Cloud &amp; Infrastructure:</strong> AWS Lambda, API
+            Gateway, S3, CloudFront, EC2, CloudWatch, Route53, IAM Identity
+            Center, CodeCommit, CodePipeline
+          </li>
+        </ul>
+      </section>
+
+      <!-- Certifications Section -->
+      <section id="certifications">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          Certifications
+        </h2>
+        <div class="mt-2 space-y-4">
+          <!-- AWS Cloud Practitioner Certification -->
+          <div>
+            <div class="flex items-center">
+              <i class="fa-brands fa-aws -mb-2 mr-2"></i>
+              <a
+                href="https://aws.amazon.com/certification/certified-cloud-practitioner/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-bold hover:underline"
+              >
+                AWS Cloud Practitioner
+              </a>
+            </div>
+            <p class="text-sm text-gray-600 ml-8">Jan 2025</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Projects Section -->
+      <section id="portfolio">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          Portfolio Projects
+        </h2>
+
+        <!-- Featherly Tours Project -->
+        <article class="mt-4">
+          <h3 class="text-lg font-bold">
+            <a
+              href="https://featherly.karuifeather.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline"
+            >
+              Featherly Tours
+            </a>
+          </h3>
+          <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+            <li>
+              Inherited a 4-year-old <strong>JavaScript/Express</strong> app
+              hosted on <strong>Heroku</strong>, leading to frequent maintenance
+              issues and near-constant server running costs.
+            </li>
+            <li>
+              Rewrote the application in <strong>NestJS</strong> using
+              <strong>TypeScript</strong> for better code structure and
+              maintainability.
+            </li>
+            <li>
+              Migrated from <strong>Heroku</strong> to an architecture based on
+              <strong>AWS Lambda</strong> + <strong>API Gateway</strong>,
+              bootstrapping the server only when needed and ensuring only
+              authorized frontend traffic.
+            </li>
+            <li>
+              Lowered hosting costs by <strong>~85%</strong> as measured by
+              monthly bills by switching to a pay-per-use model.
+            </li>
+          </ul>
+        </article>
+
+        <!-- NotebookJS Project -->
+        <article class="mt-6">
+          <h3 class="text-lg font-bold">
+            <a
+              href="https://notebook.karuifeather.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline"
+            >
+              NotebookJS
+            </a>
+          </h3>
+          <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+            <li>
+              Created a browser-based code editor that mimics
+              <strong>Jupyter Notebook</strong> functionality without
+              server-side dependencies.
+            </li>
+            <li>
+              Implemented secure sandboxing to handle potentially untrusted
+              code, ensuring user safety.
+            </li>
+            <li>
+              Cut server CPU usage by <strong>~80%</strong> by offloading code
+              execution to the client, compared to container-based execution.
+            </li>
+            <li>
+              Reduced network round trips by <strong>~70%</strong>, speeding up
+              execution and response times while lowering bandwidth.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          Education
+        </h2>
+        <div class="mt-2">
+          <p class="font-bold">
+            Jacksonville State University (JSU), Jacksonville, AL
+          </p>
+          <p>
+            Bachelor of Science in Computer Science with concentration in Data
+            Science
+          </p>
+          <p>
+            GPA: 3.8 | <time datetime="2025-05">Graduation Date: May 2025</time>
+          </p>
+          <p class="mt-2">
+            <strong>Relevant coursework:</strong> Data Structures &amp;
+            Algorithms, Software Engineering I/II, Database Systems (MySQL),
+            Computer Architecture, Applied Statistical Methods, Predictive
+            Analysis, Big Data Analysis (AWS)
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <h2
+          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
+        >
+          Experience
+        </h2>
+        <div class="mt-2">
+          <p class="font-bold">Mein Bowl, University Food Court</p>
+          <p>Spring '23 - Spring '25 | Student Supervisor</p>
+          <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+            <li>
+              Oversee day-to-day operations, including inventory, staffing, and
+              employee training.
+            </li>
+            <li>
+              Saved up to $500/month by optimizing inventory tracking
+              procedures, ensuring accurate records and reduced waste.
+            </li>
+            <li>Recruited and onboarded 10+ new employees over 8 terms.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="shadow mt-8">
+      <div class="max-w-4xl mx-auto px-4 py-4 text-center text-sm">
+        <p>
+          &copy; <time datetime="2025">2025</time> Aashaya Aryal. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      function toggleDarkMode() {
+        const htmlEl = document.documentElement;
+        htmlEl.classList.toggle('dark');
+
+        const darkModeIcon = document.getElementById('darkModeIcon');
+
+        // Swap the icon: show a sun when dark mode is active, a moon when not.
+        if (htmlEl.classList.contains('dark')) {
+          darkModeIcon.classList.remove('fa-moon');
+          darkModeIcon.classList.add('fa-sun');
+        } else {
+          darkModeIcon.classList.remove('fa-sun');
+          darkModeIcon.classList.add('fa-moon');
+        }
+      }
+
+      // On page load, set the correct icon if theme is stored in localStorage (optional)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+          document
+            .getElementById('darkModeIcon')
+            .classList.replace('fa-moon', 'fa-sun');
+        }
+      });
+    </script>
+  </body>
+</html>
