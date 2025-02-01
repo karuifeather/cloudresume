@@ -51,15 +51,18 @@ h2 {
   color: #fff;
   border: none;
 }
+
 .btn-primary:hover {
   background-color: var(--secondary);
 }
+
 .btn-secondary {
   background-color: var(--secondary);
   color: #fff;
   border: none;
   cursor: pointer;
 }
+
 .btn-secondary:hover {
   background-color: var(--primary-foreground);
 }
