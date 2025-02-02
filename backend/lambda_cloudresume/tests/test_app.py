@@ -1,7 +1,7 @@
 import json
 import pytest
 from unittest.mock import patch
-from ..app import lambda_handler, get_country_from_ip
+from ..app import lambda_handler
 
 
 class DummyDynamoDBClient:
@@ -37,29 +37,62 @@ class DummyDynamoDBClient:
 
 @pytest.fixture(autouse=True)
 def patch_env(monkeypatch):
+    # Mock environment variable for DynamoDB table
     monkeypatch.setenv("DYNAMODB_TABLE", "dummy-table")
 
 
 @pytest.fixture(autouse=True)
 def patch_boto3(monkeypatch):
+    # Patch boto3 client with a dummy DynamoDB client
     dummy_client = DummyDynamoDBClient()
     monkeypatch.setattr(
         "lambda_cloudresume.app.boto3.client", lambda service: dummy_client
     )
 
 
-def test_lambda_handler_increments_total():
-    with patch("lambda_cloudresume.app.get_country_from_ip", return_value="US"):
-        event = {"headers": {"CloudFront-Viewer-Country": "US"}}
-        context = {}
-        result = lambda_handler(event, context)
-        assert result["statusCode"] == 200
-        body = json.loads(result["body"])
+def test_lambda_handler_increments_total_and_country():
+    # Mock event with CloudFront-Viewer-Country header
+    event = {"headers": {"CloudFront-Viewer-Country": "US"}}
+    context = {}  # Lambda context is not used in this function
 
-        assert body["visitor_count"] == 1
+    # Call the Lambda function
+    result = lambda_handler(event, context)
 
-        countries = body["countries"]
-        found = any(
-            item["country"] == "US" and item["count"] == 1 for item in countries
-        )
-        assert found
+    # Check the HTTP response status code
+    assert result["statusCode"] == 200
+
+    # Parse the response body
+    body = json.loads(result["body"])
+
+    # Assert the visitor count is incremented to 1
+    assert body["visitor_count"] == 1
+
+    # Check that the top countries include the US with a count of 1
+    countries = body["countries"]
+    found = any(item["country"] == "US" and item["count"] == 1 for item in countries)
+    assert found
+
+
+def test_lambda_handler_handles_unknown_country():
+    # Mock event with no CloudFront-Viewer-Country header
+    event = {"headers": {}}
+    context = {}  # Lambda context is not used in this function
+
+    # Call the Lambda function
+    result = lambda_handler(event, context)
+
+    # Check the HTTP response status code
+    assert result["statusCode"] == 200
+
+    # Parse the response body
+    body = json.loads(result["body"])
+
+    # Assert the visitor count is incremented to 1
+    assert body["visitor_count"] == 1
+
+    # Check that the top countries include "UNKNOWN" with a count of 1
+    countries = body["countries"]
+    found = any(
+        item["country"] == "UNKNOWN" and item["count"] == 1 for item in countries
+    )
+    assert found
