@@ -316,6 +316,37 @@
       </div>
     </footer>
 
+    <!-- Floating Visitor Counter Badge -->
+    <!-- Visitor Counter Container -->
+    <div class="relative group">
+      <!-- Floating Visitor Counter Badge -->
+      <div
+        id="visitorCounterBadge"
+        class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center space-x-2 md:space-x-3 px-3 py-1 md:px-4 md:py-2 bg-gradient-to-r from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-full border border-gray-200 dark:border-gray-700 shadow-xl transform hover:scale-105 transition-transform duration-200 ease-out"
+      >
+        <i class="fa-solid fa-eye text-xl md:text-2xl text-blue-500"></i>
+        <div class="flex flex-col justify-center items-center">
+          <span
+            class="text-base md:text-xl font-bold text-gray-900 dark:text-white"
+            id="visitorCounter"
+            >0</span
+          >
+        </div>
+      </div>
+      <!-- Popup with Top Countries (initially hidden) -->
+      <div
+        id="visitorCountryPopup"
+        class="absolute bottom-full mb-2 right-0 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-xl p-3 hidden group-hover:block z-50"
+      >
+        <div class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          Top Countries
+        </div>
+        <div id="countryList" class="space-y-1">
+          <!-- Country rows will be injected here via JavaScript -->
+        </div>
+      </div>
+    </div>
+
     <!-- Dark Mode Toggle Script -->
     <script type="module" src="/src/main.js"></script>
   </body>
