@@ -66,6 +66,11 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
+        "event": json.dumps(event),
+        "context": str(context),
+        "country": country,
+        "origin-headers": headers,
+        "client_ip": client_ip,
         "headers": {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "GET,OPTIONS",
