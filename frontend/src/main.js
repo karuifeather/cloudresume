@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const flagUrl = `https://flagcdn.com/24x18/${lowerCode}.png`;
 
       const countryRow = document.createElement('div');
-      countryRow.className = 'flex items-center space-x-2';
+      countryRow.className = 'flex items-center space-x-3';
       countryRow.innerHTML = `
         <img src="${flagUrl}" alt="${country.country} Flag" class="w-6 h-auto">
         <span class="text-sm text-gray-800 dark:text-gray-100">${country.count}</span>
