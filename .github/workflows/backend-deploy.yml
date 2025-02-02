@@ -24,13 +24,14 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.13.1'
 
       # 2.5. Install Poetry
       - name: Install Poetry
         run: |
           pip install --upgrade pip
           pip install poetry
+          poetry --version
 
       # 3. Install dependencies
       - name: Install Python Dependencies
