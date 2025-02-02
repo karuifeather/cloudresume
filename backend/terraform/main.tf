@@ -75,7 +75,7 @@ resource "aws_lambda_function" "visitor_counter" {
   function_name    = var.lambda_function_name
   role             = aws_iam_role.lambda_role.arn
   handler          = "app.lambda_handler"
-  runtime          = "python3.8"
+  runtime          = "python3.11"
   source_code_hash = filebase64sha256("../lambda_cloudresume/lambda.zip")
   environment {
     variables = {
@@ -192,7 +192,6 @@ resource "aws_api_gateway_deployment" "visitor_deployment" {
     aws_api_gateway_integration_response.options_visitor,
   ]
 }
-
 
 resource "aws_api_gateway_stage" "visitor_stage" {
   rest_api_id   = aws_api_gateway_rest_api.visitor_api.id

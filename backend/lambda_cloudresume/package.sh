@@ -14,7 +14,7 @@ mkdir package
 # Install dependencies directly into the package directory
 echo "Installing dependencies with Poetry..."
 poetry self add poetry-plugin-export
-poetry export --without-hashes --without dev -f requirements.txt -o requirements.txt
+poetry export --without-hashes --python-version 3.11 --without dev -f requirements.txt -o requirements.txt
 pip install --target package -r requirements.txt
 
 # Move into the package directory and zip dependencies
