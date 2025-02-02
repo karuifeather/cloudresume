@@ -1,23 +1,25 @@
 #!/bin/bash
-set -e 
+set -e
 
 # Define package name
 PACKAGE_NAME="lambda.zip"
 
-# Remove any existing package
+# Remove any existing package and previous build
 rm -f $PACKAGE_NAME
-rm -rf package  # Clean previous build
+rm -rf package
 
 # Create a new package directory
 mkdir package
 
-# Install dependencies directly from Poetry into package/
+# Install dependencies directly into the package directory
 echo "Installing dependencies with Poetry..."
-poetry run pip install --no-deps --target package $(poetry export -f requirements.txt --without-hashes | grep -v "^-e")
+poetry self add poetry-plugin-export
+poetry export --without-hashes --without dev -f requirements.txt -o requirements.txt
+pip install --target package -r requirements.txt
 
 # Move into the package directory and zip dependencies
 cd package
-zip -r9 ../$PACKAGE_NAME . 
+zip -r9 ../$PACKAGE_NAME .
 
 # Go back to the root directory
 cd ..
