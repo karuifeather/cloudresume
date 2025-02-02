@@ -1,15 +1,27 @@
 import json
 import boto3
+import requests
 import os
+
+
+def get_country_from_ip(ip_address):
+    try:
+        response = requests.get(f"https://ipapi.co/{ip_address}/country/")
+        if response.status_code == 200:
+            return response.text.upper()
+    except Exception as e:
+        print(f"Error fetching country: {e}")
+    return "UNKNOWN"
 
 
 def lambda_handler(event, context):
     dynamodb = boto3.client("dynamodb")
     TABLE_NAME = os.environ.get("DYNAMODB_TABLE")
 
-    # Get the country from the CloudFront header if available; default to "Unknown"
+    # Get the country from the client IP address
     headers = event.get("headers", {})
-    country = headers.get("CloudFront-Viewer-Country", "Unknown").upper()
+    client_ip = event.get("headers", {}).get("X-Forwarded-For", "").split(",")[0]
+    country = get_country_from_ip(client_ip)
 
     # Update overall total count (stored with id 'total')
     total_response = dynamodb.update_item(
