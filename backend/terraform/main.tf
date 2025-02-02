@@ -98,9 +98,6 @@ resource "aws_api_gateway_resource" "visitor" {
   path_part   = "visitor"
 }
 
-########################################
-# GET /visitor
-########################################
 resource "aws_api_gateway_method" "get_visitor" {
   rest_api_id   = aws_api_gateway_rest_api.visitor_api.id
   resource_id   = aws_api_gateway_resource.visitor.id
@@ -117,9 +114,29 @@ resource "aws_api_gateway_integration" "get_visitor_integration" {
   uri                     = aws_lambda_function.visitor_counter.invoke_arn
 }
 
-########################################
-# OPTIONS /visitor for CORS
-########################################
+resource "aws_api_gateway_method_response" "get_visitor" {
+  rest_api_id = aws_api_gateway_rest_api.visitor_api.id
+  resource_id = aws_api_gateway_resource.visitor.id
+  http_method = aws_api_gateway_method.get_visitor.http_method
+  status_code = "200"
+
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = true
+  }
+}
+
+resource "aws_api_gateway_integration_response" "get_visitor" {
+  rest_api_id = aws_api_gateway_rest_api.visitor_api.id
+  resource_id = aws_api_gateway_resource.visitor.id
+  http_method = aws_api_gateway_method.get_visitor.http_method
+  status_code = "200"
+
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
+  }
+}
+
+
 resource "aws_api_gateway_method" "options_visitor" {
   rest_api_id   = aws_api_gateway_rest_api.visitor_api.id
   resource_id   = aws_api_gateway_resource.visitor.id
@@ -132,9 +149,6 @@ resource "aws_api_gateway_integration" "options_visitor_integration" {
   resource_id             = aws_api_gateway_resource.visitor.id
   http_method             = aws_api_gateway_method.options_visitor.http_method
   type                    = "MOCK"
-  request_templates = {
-    "application/json" = "{\"statusCode\": 200}"
-  }
 }
 
 resource "aws_api_gateway_method_response" "options_visitor" {
@@ -163,31 +177,33 @@ resource "aws_api_gateway_integration_response" "options_visitor" {
   }
 }
 
-########################################
-# Lambda Permission
-########################################
+resource "aws_api_gateway_deployment" "visitor_deployment" {
+  rest_api_id = aws_api_gateway_rest_api.visitor_api.id
+
+  # Explicit dependencies to ensure changes trigger redeployment
+  depends_on = [
+    aws_api_gateway_method.get_visitor,
+    aws_api_gateway_method.options_visitor,
+    aws_api_gateway_integration.get_visitor_integration,
+    aws_api_gateway_integration.options_visitor_integration,
+    aws_api_gateway_method_response.get_visitor,
+    aws_api_gateway_method_response.options_visitor,
+    aws_api_gateway_integration_response.get_visitor,
+    aws_api_gateway_integration_response.options_visitor,
+  ]
+}
+
+
+resource "aws_api_gateway_stage" "visitor_stage" {
+  rest_api_id   = aws_api_gateway_rest_api.visitor_api.id
+  deployment_id = aws_api_gateway_deployment.visitor_deployment.id
+  stage_name    = var.api_stage
+}
+
 resource "aws_lambda_permission" "allow_api_gateway" {
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.visitor_counter.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_api_gateway_rest_api.visitor_api.execution_arn}/*/*"
-}
-
-########################################
-# API Gateway Deployment & Stage
-########################################
-resource "aws_api_gateway_deployment" "visitor_deployment" {
-  rest_api_id = aws_api_gateway_rest_api.visitor_api.id
-
-  depends_on = [
-    aws_api_gateway_integration.get_visitor_integration,
-    aws_api_gateway_integration.options_visitor_integration
-  ]
-}
-
-resource "aws_api_gateway_stage" "visitor_stage" {
-  rest_api_id   = aws_api_gateway_rest_api.visitor_api.id
-  deployment_id = aws_api_gateway_deployment.visitor_deployment.id
-  stage_name    = var.api_stage
 }
