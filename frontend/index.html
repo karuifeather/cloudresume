@@ -317,33 +317,35 @@
     </footer>
 
     <!-- Visitor Counter Container -->
-    <div class="relative group">
+    <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
       <!-- Floating Visitor Counter Badge -->
       <button
         id="visitorCounterBadge"
-        class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 flex items-center space-x-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-gray-800 dark:to-gray-900 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+        class="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 dark:from-gray-800 dark:to-gray-900 rounded-full shadow-lg transform hover:scale-110 transition-transform duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400"
         aria-expanded="false"
         aria-controls="visitorCountryPopup"
       >
-        <i class="fa-solid fa-eye text-xl md:text-2xl text-white"></i>
+        <i class="fa-solid fa-eye text-2xl text-white"></i>
         <span
           id="visitorCounter"
-          class="text-lg md:text-xl font-semibold text-white dark:text-gray-100"
+          class="text-lg md:text-xl font-bold text-white dark:text-gray-100"
           >0</span
         >
       </button>
 
-      <!-- Popup with Top Countries (initially hidden) -->
+      <!-- Popup with Top Countries -->
       <div
         id="visitorCountryPopup"
-        class="absolute bottom-full right-0 mb-4 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-in-out transform translate-y-4 group-hover:translate-y-0"
+        class="absolute bottom-full right-0 mb-4 w-64 sm:w-72 max-w-full bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible transition-opacity transform scale-95 z-50"
       >
-        <div class="p-4">
-          <h3 class="text-base font-bold text-gray-700 dark:text-gray-300 mb-3">
-            Top Countries
+        <div class="p-4 sm:p-5">
+          <h3
+            class="text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3"
+          >
+            Countries
           </h3>
-          <div id="countryList" class="space-y-3">
-            <!-- Country rows will be injected here via JavaScript -->
+          <div id="countryList" class="space-y-3 sm:space-y-4">
+            <!-- Country rows will be dynamically injected here -->
           </div>
         </div>
       </div>
