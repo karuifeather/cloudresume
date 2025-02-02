@@ -26,7 +26,8 @@ window.toggleDarkMode = toggleDarkMode;
 
 // View Counter
 document.addEventListener('DOMContentLoaded', async () => {
-  const apiUrl = 'https://35cj1fyiig.execute-api.us-east-1.amazonaws.com/';
+  const apiUrl =
+    'https://35cj1fyiig.execute-api.us-east-1.amazonaws.com/prod/visitor';
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
