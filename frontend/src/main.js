@@ -90,7 +90,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         countryRow.className = "flex items-center space-x-2 sm:space-x-3";
 
         // Handle special case for unknown country
-        if (country.country === "country_UNKNOWN") {
+        if (
+          country.country === "UNKNOWN" ||
+          country.country === "country_UNKNOWN"
+        ) {
           countryRow.innerHTML = `
             <span class="text-lg sm:text-xl">🌍</span>
             <span class="text-xs sm:text-sm font-medium text-gray-800 dark:text-gray-100">
@@ -98,11 +101,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             </span>
           `;
         } else {
-          const lowerCode = country.country.toLowerCase().replace(" ", "-");
-          const flagUrl = `https://flagcdn.com/24x18/${lowerCode}.png`;
+          // Remove 'country_' prefix if present
+          const countryCode = country.country
+            .replace("country_", "")
+            .toLowerCase();
+          const flagUrl = `https://flagcdn.com/24x18/${countryCode}.png`;
 
           countryRow.innerHTML = `
-            <img src="${flagUrl}" alt="${country.country} Flag" class="w-5 sm:w-6 h-auto">
+            <img src="${flagUrl}" alt="${countryCode.toUpperCase()} Flag" class="w-5 sm:w-6 h-auto">
             <span class="text-xs sm:text-sm font-medium text-gray-800 dark:text-gray-100">
               ${country.count}
             </span>
