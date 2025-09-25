@@ -472,12 +472,10 @@
       aria-label="Visitor statistics"
     >
       <!-- Floating Visitor Counter Badge -->
-      <button
+      <div
         id="visitorCounterBadge"
-        class="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 dark:from-gray-800 dark:to-gray-900 rounded-full shadow-lg transform hover:scale-110 transition-transform duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400"
-        aria-expanded="false"
-        aria-controls="visitorCountryPopup"
-        aria-label="View visitor statistics"
+        class="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-800 dark:to-gray-900 rounded-full shadow-lg"
+        aria-label="Visitor statistics"
       >
         <i class="fa-solid fa-eye text-2xl text-white" aria-hidden="true"></i>
         <span
@@ -486,33 +484,6 @@
           aria-label="Total visitors: 0"
           >0</span
         >
-      </button>
-
-      <!-- Popup with Top Countries -->
-      <div
-        id="visitorCountryPopup"
-        class="absolute bottom-full right-0 mb-4 min-w-[7rem] max-w-[24rem] bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible transition-opacity transform scale-95 z-50"
-        role="dialog"
-        aria-labelledby="countries-heading"
-        aria-hidden="true"
-      >
-        <div class="p-4 sm:p-5">
-          <h3
-            id="countries-heading"
-            class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3"
-            style="color: #fff !important"
-          >
-            Visitor Countries
-          </h3>
-          <div
-            id="countryList"
-            class="space-y-3 sm:space-y-4"
-            role="list"
-            aria-label="List of visitor countries"
-          >
-            <!-- Country rows will be dynamically injected here -->
-          </div>
-        </div>
       </div>
     </div>
 

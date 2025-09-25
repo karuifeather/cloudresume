@@ -9,20 +9,28 @@ def lambda_handler(event, context):
     dynamodb = boto3.client("dynamodb")
     TABLE_NAME = os.environ.get("DYNAMODB_TABLE")
 
-    # Get the country from CloudFront headers
+    # Get client IP for session tracking
     headers = event.get("headers", {})
-    country = headers.get("CloudFront-Viewer-Country", "").upper()
     
-    # If country is empty or None, try to get from other headers or set to UNKNOWN
-    if not country or country == "":
-        country = "UNKNOWN"
+    # Try multiple sources for IP address
+    client_ip = None
     
-    # Get client IP and User-Agent for session tracking
-    client_ip = headers.get("X-Forwarded-For", "").split(",")[0].strip()
-    user_agent = headers.get("User-Agent", "")
+    # Try CloudFront headers first
+    if headers.get("CloudFront-Viewer-Address"):
+        client_ip = headers.get("CloudFront-Viewer-Address").split(":")[0]
+    elif headers.get("X-Forwarded-For"):
+        client_ip = headers.get("X-Forwarded-For").split(",")[0].strip()
+    elif headers.get("X-Real-IP"):
+        client_ip = headers.get("X-Real-IP")
+    else:
+        # Fallback to request context
+        client_ip = event.get("requestContext", {}).get("identity", {}).get("sourceIp", "unknown")
     
-    # Create a session identifier based on IP and User-Agent
-    session_id = hashlib.md5(f"{client_ip}_{user_agent}".encode()).hexdigest()
+    # Create a session identifier based on IP only
+    session_id = hashlib.md5(f"{client_ip}".encode()).hexdigest()
+    
+    # Debug logging
+    print(f"Session ID: {session_id}, IP: {client_ip}")
     
     # Check if this session has already been counted today
     today = time.strftime("%Y-%m-%d")
@@ -35,23 +43,18 @@ def lambda_handler(event, context):
             Key={"id": {"S": session_key}}
         )
         
-        # If session already exists, just return current counts without incrementing
+        # If session already exists, just return current count without incrementing
         if "Item" in session_response:
-            # Get current counts without incrementing
+            print(f"Session already exists for {session_key}")
+            # Get current count without incrementing
             total_response = dynamodb.get_item(
                 TableName=TABLE_NAME,
                 Key={"id": {"S": "total"}}
             )
             total_count = int(total_response.get("Item", {}).get("count", {}).get("N", "0"))
-            
-            country_key = f"country_{country}"
-            country_response = dynamodb.get_item(
-                TableName=TABLE_NAME,
-                Key={"id": {"S": country_key}}
-            )
-            country_count = int(country_response.get("Item", {}).get("count", {}).get("N", "0"))
         else:
-            # New session - increment counters
+            print(f"New session detected: {session_key}")
+            # New session - increment counter
             # Update overall total count (stored with id 'total')
             total_response = dynamodb.update_item(
                 TableName=TABLE_NAME,
@@ -62,17 +65,6 @@ def lambda_handler(event, context):
                 ReturnValues="UPDATED_NEW",
             )
             total_count = int(total_response["Attributes"]["count"]["N"])
-
-            # Update country-specific count (stored with id like 'country_US')
-            country_response = dynamodb.update_item(
-                TableName=TABLE_NAME,
-                Key={"id": {"S": country_key}},
-                UpdateExpression="ADD #count :inc",
-                ExpressionAttributeNames={"#count": "count"},
-                ExpressionAttributeValues={":inc": {"N": "1"}},
-                ReturnValues="UPDATED_NEW",
-            )
-            country_count = int(country_response["Attributes"]["count"]["N"])
             
             # Mark this session as counted for today
             dynamodb.put_item(
@@ -83,6 +75,7 @@ def lambda_handler(event, context):
                     "timestamp": {"S": str(int(time.time()))}
                 }
             )
+            print(f"Session recorded: {session_key}")
             
     except Exception as e:
         # If there's an error, fall back to the original behavior
@@ -98,35 +91,6 @@ def lambda_handler(event, context):
         )
         total_count = int(total_response["Attributes"]["count"]["N"])
 
-        # Update country-specific count (stored with id like 'country_US')
-        country_response = dynamodb.update_item(
-            TableName=TABLE_NAME,
-            Key={"id": {"S": country_key}},
-            UpdateExpression="ADD #count :inc",
-            ExpressionAttributeNames={"#count": "count"},
-            ExpressionAttributeValues={":inc": {"N": "1"}},
-            ReturnValues="UPDATED_NEW",
-        )
-        country_count = int(country_response["Attributes"]["count"]["N"])
-
-    # Get all country records (scan for keys that begin with "country_")
-    scan_response = dynamodb.scan(
-        TableName=TABLE_NAME,
-        FilterExpression="begins_with(id, :prefix)",
-        ExpressionAttributeValues={":prefix": {"S": "country_"}},
-    )
-
-    countries = []
-    for item in scan_response.get("Items", []):
-        key = item["id"]["S"]
-        if key.startswith("country_"):
-            country_code = key[len("country_") :]
-            count_val = int(item["count"]["N"])
-            countries.append({"country": country_code, "count": count_val})
-
-    # Sort the country list by count descending and take the top 3
-    top_countries = sorted(countries, key=lambda x: x["count"], reverse=True)[:3]
-
     return {
         "statusCode": 200,
         "headers": {
@@ -134,5 +98,5 @@ def lambda_handler(event, context):
             "Access-Control-Allow-Methods": "GET,OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
         },
-        "body": json.dumps({"visitor_count": total_count, "countries": top_countries}),
+        "body": json.dumps({"visitor_count": total_count}),
     }
