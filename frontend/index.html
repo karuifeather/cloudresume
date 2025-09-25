@@ -3,10 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Resume for Aashaya Aryal, a Computer Science senior with experience in full-stack development and cloud solutions."
+      content="Resume for Aashaya Aryal, a Software Developer and Solutions Architect with expertise in full-stack development, cloud architecture, and AWS solutions."
     />
+    <meta
+      name="keywords"
+      content="Aashaya Aryal, Software Developer, Solutions Architect, Cloud Enthusiast, Full-Stack Developer, AWS, React, Angular, TypeScript, Python, Cloud Solutions, Software Engineering"
+    />
+    <meta name="author" content="Aashaya Aryal" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:title"
+      content="Aashaya Aryal - Software Developer & Solutions Architect"
+    />
+    <meta
+      property="og:description"
+      content="Software Developer and Solutions Architect with expertise in full-stack development, cloud architecture, and AWS solutions."
+    />
+    <meta property="og:url" content="https://karuifeather.com" />
+    <meta property="og:site_name" content="Aashaya Aryal Resume" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Aashaya Aryal - Software Developer & Solutions Architect"
+    />
+    <meta
+      name="twitter:description"
+      content="Software Developer and Solutions Architect with expertise in full-stack development, cloud architecture, and AWS solutions."
+    />
+    <meta name="twitter:url" content="https://karuifeather.com" />
+
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="preconnect"
+      href="https://i55go67nkd.execute-api.us-east-1.amazonaws.com"
+    />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -15,9 +59,40 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" href="/assets/feather-icon.png" />
 
-    <title>Aashaya Aryal - Resume</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/feather-icon.png" />
+    <link rel="apple-touch-icon" href="/assets/feather-icon.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aashaya Aryal",
+        "jobTitle": "Software Developer & Solutions Architect",
+        "description": "Software Developer and Solutions Architect with expertise in full-stack development, cloud architecture, and AWS solutions.",
+        "url": "https://karuifeather.com",
+        "email": "ash@karuifeather.com",
+        "telephone": "830-344-0168",
+        "sameAs": ["https://github.com/karuifeather"],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Jacksonville State University"
+        },
+        "knowsAbout": [
+          "Computer Science",
+          "Full-Stack Development",
+          "AWS Cloud Solutions",
+          "TypeScript",
+          "React",
+          "Angular",
+          "Python"
+        ]
+      }
+    </script>
+
+    <title>Aashaya Aryal - Software Developer & Solutions Architect</title>
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body class="transition-colors">
@@ -27,7 +102,7 @@
     >
 
     <!-- Header / Name, Contact & CTA Buttons -->
-    <header class="shadow">
+    <header class="shadow" role="banner">
       <div class="max-w-4xl mx-auto px-4 py-6">
         <div
           class="flex flex-col md:flex-row md:items-center md:justify-between"
@@ -35,47 +110,76 @@
           <!-- Name -->
           <div>
             <h1 class="text-2xl font-bold">Aashaya Aryal</h1>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              Software Developer • Solutions Architect • Cloud Enthusiast
+            </p>
           </div>
           <!-- Contact & Buttons -->
           <div
             class="flex flex-col md:flex-row md:items-center md:space-x-4 mt-4 md:mt-0"
           >
             <!-- Contact Information -->
-            <div class="text-sm flex flex-wrap items-center space-x-2">
-              <a href="mailto:aryalaashaya@gmail.com" class="hover:underline">
-                aryalaashaya@gmail.com
+            <address
+              class="text-sm flex flex-wrap items-center space-x-2 not-italic"
+            >
+              <a
+                href="mailto:ash@karuifeather.com"
+                class="hover:underline"
+                aria-label="Send email to ash@karuifeather.com"
+              >
+                ash@karuifeather.com
               </a>
-              <span>|</span>
+              <span aria-hidden="true">|</span>
               <a
                 href="https://karuifeather.com"
                 class="hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit karuifeather.com (opens in new tab)"
               >
                 karuifeather.com
               </a>
-            </div>
+              <span aria-hidden="true">|</span>
+              <a
+                href="tel:830-344-0168"
+                class="hover:underline"
+                aria-label="Call 830-344-0168"
+              >
+                830-344-0168
+              </a>
+            </address>
             <!-- CTA Buttons -->
-            <div class="mt-2 md:mt-0 flex space-x-2">
+            <div
+              class="mt-2 md:mt-0 flex space-x-2"
+              role="group"
+              aria-label="Action buttons"
+            >
               <!-- Download Resume Button -->
               <a
                 href="https://drive.usercontent.google.com/u/0/uc?id=1buMNt-bULz9ysbRb6WvdDiffystuiipG&export=download"
                 download
                 class="btn btn-primary flex items-center space-x-1 group transition-all duration-150 ease-in-out transform hover:scale-105 active:scale-95"
+                aria-label="Download resume PDF"
               >
                 <i
                   class="fa-solid fa-cloud-arrow-down text-lg transition-all duration-150 ease-in-out"
+                  aria-hidden="true"
                 ></i>
+                <span class="sr-only">Download Resume</span>
               </a>
               <!-- Toggle Dark Mode Button -->
               <button
                 onclick="toggleDarkMode()"
                 class="btn btn-secondary flex items-center space-x-1 group transition-all duration-150 ease-in-out transform hover:scale-105 active:scale-95"
+                aria-label="Toggle dark mode"
+                aria-pressed="false"
               >
                 <i
                   id="darkModeIcon"
                   class="fas fa-moon text-lg transition-all duration-150 ease-in-out"
+                  aria-hidden="true"
                 ></i>
+                <span class="sr-only">Toggle Dark Mode</span>
               </button>
             </div>
           </div>
@@ -83,65 +187,79 @@
       </div>
     </header>
 
+    <!-- Navigation -->
+    <nav
+      class="max-w-4xl mx-auto px-4 py-4"
+      role="navigation"
+      aria-label="Resume sections"
+    >
+      <ul class="flex flex-wrap gap-4 text-sm">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#skills" class="hover:underline">Skills</a></li>
+        <li>
+          <a href="#certifications" class="hover:underline">Certifications</a>
+        </li>
+        <li><a href="#portfolio" class="hover:underline">Projects</a></li>
+        <li><a href="#education" class="hover:underline">Education</a></li>
+        <li><a href="#experience" class="hover:underline">Experience</a></li>
+        <li><a href="#strengths" class="hover:underline">Strengths</a></li>
+      </ul>
+    </nav>
+
     <!-- Main Content -->
-    <main id="main-content" class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+    <main
+      id="main-content"
+      class="max-w-4xl mx-auto px-4 py-8 space-y-8"
+      role="main"
+    >
       <!-- About Me Section -->
-      <section id="about">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="text-xl font-semibold mb-2 inline-block">
           About Me
         </h2>
         <p class="mt-2 leading-relaxed">
-          Computer Science senior with hands-on experience building and
-          deploying full-stack applications using Angular, React, and
-          Express/Lambda on AWS. Skilled in designing robust cloud solutions,
-          integrating CI/CD pipelines, and writing clean, well-tested code.
-          Passionate about creating secure, scalable apps that meet real user
-          needs, and eager to contribute to a collaborative, growth-oriented
-          environment.
+          Software Developer and Solutions Architect with expertise in building
+          and deploying full-stack applications using Angular, React, Next.js,
+          and AWS serverless services. Specialized in designing scalable cloud
+          architectures, implementing CI/CD pipelines, and developing
+          cost-efficient solutions. Passionate about creating innovative
+          software solutions that drive business value and enhance user
+          experiences.
         </p>
       </section>
 
       <!-- Technical Skills Section -->
       <section id="skills">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
+        <h2 class="text-xl font-semibold mb-2 inline-block">
           Technical Skills
         </h2>
         <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
           <li>
-            <strong>Programming Languages:</strong> TypeScript, JavaScript,
-            Python, Java
+            <strong>Programming:</strong> TypeScript, JavaScript, Python, Java
           </li>
           <li>
-            <strong>Fullstack Tech:</strong> Angular, React, Redux, Node.js,
-            Express, AWS Lambda, Next.js, NestJS, Tailwind CSS
+            <strong>Front-End / Full-Stack:</strong> Angular, React, Redux,
+            NGXS, Next.js, Tailwind CSS, Node.js, Express, NestJS
           </li>
           <li>
-            <strong>Databases:</strong> MongoDB, Apache Cassandra, PostgreSQL,
-            MySQL, Redis, AWS RDS, AWS Aurora
+            <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Apache
+            Cassandra, Redis, AWS RDS/Aurora
           </li>
           <li>
-            <strong>DevOps &amp; Tools:</strong> Terraform, Docker, Linux,
-            Nginx, Git, GitHub Workflows, GitHub Actions, Nx, Webpack
+            <strong>DevOps &amp; Tools:</strong> Docker, Linux, Nginx,
+            Git/GitHub, GitHub Actions/Workflows, Nx, Webpack
           </li>
           <li>
-            <strong>Cloud &amp; Infrastructure:</strong> AWS Lambda, API
-            Gateway, S3, CloudFront, EC2, CloudWatch, Route53, IAM Identity
-            Center, CodeCommit, CodePipeline
+            <strong>Cloud &amp; Infrastructure:</strong> AWS (Lambda, API
+            Gateway, S3, CloudFront, EC2, CloudWatch, Route53, IAM), CodeCommit,
+            CodePipeline
           </li>
         </ul>
       </section>
 
       <!-- Certifications Section -->
       <section id="certifications">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
-          Certifications
-        </h2>
+        <h2 class="text-xl font-semibold mb-2 inline-block">Certifications</h2>
         <div class="mt-2 space-y-4">
           <!-- AWS Cloud Practitioner Certification -->
           <div>
@@ -163,9 +281,7 @@
 
       <!-- Portfolio Projects Section -->
       <section id="portfolio">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
+        <h2 class="text-xl font-semibold mb-2 inline-block">
           Portfolio Projects
         </h2>
 
@@ -183,24 +299,18 @@
           </h3>
           <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
             <li>
-              Inherited a 4-year-old <strong>JavaScript/Express</strong> app
-              hosted on <strong>Heroku</strong>, leading to frequent maintenance
-              issues and near-constant server running costs.
-            </li>
-            <li>
-              Rewrote the application in <strong>NestJS</strong> using
-              <strong>TypeScript</strong> for better code structure and
+              Modernized a 4-year-old JavaScript/Express app by rewriting it in
+              <strong>NestJS + TypeScript</strong> for better code structure and
               maintainability.
             </li>
             <li>
-              Migrated from <strong>Heroku</strong> to an architecture based on
-              <strong>AWS Lambda</strong> + <strong>API Gateway</strong>,
-              bootstrapping the server only when needed and ensuring only
-              authorized frontend traffic.
+              Migrated hosting from Heroku to
+              <strong>AWS Lambda + API Gateway</strong>, cutting monthly server
+              costs by <strong>~85%</strong> through pay-per-use architecture.
             </li>
             <li>
-              Lowered hosting costs by <strong>~85%</strong> as measured by
-              monthly bills by switching to a pay-per-use model.
+              Implemented request authorization to ensure only verified
+              front-end traffic reaches the backend.
             </li>
           </ul>
         </article>
@@ -219,21 +329,20 @@
           </h3>
           <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
             <li>
-              Created a browser-based code editor that mimics
-              <strong>Jupyter Notebook</strong> functionality without
-              server-side dependencies.
+              Built a
+              <strong>lightweight, browser-based code editor</strong> with
+              Jupyter-style notebooks that runs entirely in your browser - no
+              server required.
             </li>
             <li>
-              Implemented secure sandboxing to handle potentially untrusted
-              code, ensuring user safety.
+              <strong>Zero signup required</strong> - everything is stored
+              locally in your browser, giving you complete privacy and instant
+              access to your notebooks.
             </li>
             <li>
-              Cut server CPU usage by <strong>~80%</strong> by offloading code
-              execution to the client, compared to container-based execution.
-            </li>
-            <li>
-              Reduced network round trips by <strong>~70%</strong>, speeding up
-              execution and response times while lowering bandwidth.
+              Designed with <strong>secure sandboxing</strong> to safely execute
+              code client-side, making it perfect for learning, prototyping, and
+              data analysis without any setup.
             </li>
           </ul>
         </article>
@@ -241,94 +350,140 @@
 
       <!-- Education Section -->
       <section id="education">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
-          Education
-        </h2>
-        <div class="mt-2">
-          <p class="font-bold">
-            Jacksonville State University (JSU), Jacksonville, AL
-          </p>
-          <p>
-            Bachelor of Science in Computer Science with concentration in Data
-            Science
-          </p>
-          <p>
-            GPA: 3.8 | <time datetime="2025-05">Graduation Date: May 2025</time>
-          </p>
-          <p class="mt-2">
-            <strong>Relevant coursework:</strong> Data Structures &amp;
-            Algorithms, Software Engineering I/II, Database Systems (MySQL),
-            Computer Architecture, Applied Statistical Methods, Predictive
-            Analysis, Big Data Analysis (AWS)
-          </p>
+        <h2 class="text-xl font-semibold mb-2 inline-block">Education</h2>
+        <div class="mt-2 space-y-4">
+          <div>
+            <p class="font-bold">
+              Master of Science, Computer Science (MCIS) – <em>In Progress</em>
+            </p>
+            <p>
+              Jacksonville State University (JSU), Jacksonville, AL ·
+              <strong>Expected May 2027</strong>
+            </p>
+          </div>
+          <div>
+            <p class="font-bold">
+              Bachelor of Science, Computer Science (Data Science concentration)
+            </p>
+            <p>
+              Jacksonville State University (JSU), Jacksonville, AL ·
+              <strong>GPA: 3.8</strong>
+            </p>
+            <p class="mt-2">
+              <strong>Relevant coursework:</strong> Data Structures &amp;
+              Algorithms, Software Engineering I/II, Database Systems, Computer
+              Architecture, Applied Statistical Methods, Predictive Analysis,
+              Big Data Analysis (AWS)
+            </p>
+          </div>
         </div>
       </section>
 
       <!-- Experience Section -->
       <section id="experience">
-        <h2
-          class="text-xl font-semibold mb-2 border-b-2 border-gray-300 inline-block"
-        >
-          Experience
-        </h2>
+        <h2 class="text-xl font-semibold mb-2 inline-block">Experience</h2>
+        <div class="mt-2 space-y-6">
+          <div>
+            <p class="font-bold">
+              Graduate Teaching Assistant – Jacksonville State University
+            </p>
+            <p>Fall 2022 – Present</p>
+            <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+              <li>
+                Assist in undergraduate computing courses and labs, delivering
+                lectures, designing exercises, and providing one-on-one
+                tutoring.
+              </li>
+              <li>
+                Mentor students in critical thinking and problem solving while
+                refining skills in public speaking, time management, and
+                collaborative leadership.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-bold">
+              Student Supervisor – Mein Bowl, University Food Court
+            </p>
+            <p>Fall 2022 – April 2025</p>
+            <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
+              <li>
+                Oversaw daily operations, including inventory control, staffing,
+                and employee training for a high-traffic campus food venue.
+              </li>
+              <li>
+                Optimized inventory tracking to
+                <strong>save ~$500/month</strong> and recruited/onboarded
+                <strong>6+ employees</strong> over eight semesters.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Strengths Section -->
+      <section id="strengths">
+        <h2 class="text-xl font-semibold mb-2 inline-block">Key Strengths</h2>
         <div class="mt-2">
-          <p class="font-bold">Mein Bowl, University Food Court</p>
-          <p>Spring '23 - Spring '25 | Student Supervisor</p>
-          <ul class="list-disc list-inside ml-4 space-y-1 mt-2">
-            <li>
-              Oversee day-to-day operations, including inventory, staffing, and
-              employee training.
-            </li>
-            <li>
-              Saved up to $500/month by optimizing inventory tracking
-              procedures, ensuring accurate records and reduced waste.
-            </li>
-            <li>Recruited and onboarded 10+ new employees over 8 terms.</li>
-          </ul>
+          <p class="text-sm">
+            Full-Stack Development • Cloud Architecture • Solutions Design •
+            Serverless Development • CI/CD Automation • Cost Optimization •
+            Technical Leadership • Cross-Functional Collaboration
+          </p>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="shadow xl mt-8">
-      <div class="max-w-4xl mx-auto px-4 py-4 text-center text-sm">
-        <p>
+    <footer class="mt-8 border-t" style="border-color: var(--border-light)">
+      <div class="max-w-4xl mx-auto px-4 py-6 text-center">
+        <p class="text-sm" style="color: var(--text-light)">
           Made with <i class="fa-solid fa-heart text-red-500"></i> by
           <a
             href="https://github.com/karuifeather"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:underline"
+            class="hover:underline font-medium"
+            style="color: var(--primary)"
           >
-            @karuifeather</a
-          >.
+            @karuifeather
+          </a>
+          •
           <a
             href="https://github.com/karuifeather/cloudresume"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:underline ml-2"
+            class="hover:underline"
+            style="color: var(--primary)"
           >
-            View Source on GitHub
+            View Source
           </a>
+        </p>
+        <p class="text-xs mt-2" style="color: var(--text-muted)">
+          © 2025 Aashaya Aryal
         </p>
       </div>
     </footer>
 
     <!-- Visitor Counter Container -->
-    <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
+    <div
+      class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50"
+      role="complementary"
+      aria-label="Visitor statistics"
+    >
       <!-- Floating Visitor Counter Badge -->
       <button
         id="visitorCounterBadge"
         class="flex items-center space-x-3 px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 dark:from-gray-800 dark:to-gray-900 rounded-full shadow-lg transform hover:scale-110 transition-transform duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-400"
         aria-expanded="false"
         aria-controls="visitorCountryPopup"
+        aria-label="View visitor statistics"
       >
-        <i class="fa-solid fa-eye text-2xl text-white"></i>
+        <i class="fa-solid fa-eye text-2xl text-white" aria-hidden="true"></i>
         <span
           id="visitorCounter"
           class="text-lg md:text-xl font-bold text-white dark:text-gray-100"
+          aria-label="Total visitors: 0"
           >0</span
         >
       </button>
@@ -337,14 +492,23 @@
       <div
         id="visitorCountryPopup"
         class="absolute bottom-full right-0 mb-4 min-w-[7rem] max-w-[24rem] bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible transition-opacity transform scale-95 z-50"
+        role="dialog"
+        aria-labelledby="countries-heading"
+        aria-hidden="true"
       >
         <div class="p-4 sm:p-5">
           <h3
+            id="countries-heading"
             class="text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3"
           >
-            Countries
+            Visitor Countries
           </h3>
-          <div id="countryList" class="space-y-3 sm:space-y-4">
+          <div
+            id="countryList"
+            class="space-y-3 sm:space-y-4"
+            role="list"
+            aria-label="List of visitor countries"
+          >
             <!-- Country rows will be dynamically injected here -->
           </div>
         </div>

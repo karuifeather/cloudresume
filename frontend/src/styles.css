@@ -1,28 +1,36 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Custom styles */
 :root {
-  --primary: #39426a;
-  --primary-foreground: var(--primary);
-  --secondary: #669999;
-  --secondary-foreground: #2e2e2e;
-  --bg-light: #f9fafb;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #7c3aed;
+  --secondary-foreground: #ffffff;
+  --accent: #06b6d4;
+  --bg-light: #fafafa;
   --text-light: #1f2937;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 ::selection {
-  background-color: var(--secondary);
-  color: #dedede;
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 /* Dark mode color overrides */
 .dark {
-  --primary: #b3e0ff;
-  --primary-foreground: #566c8d;
-  --secondary: #cc6666;
-  --secondary-foreground: var(--primary-foreground);
-  --bg-light: #1f2937;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #8b5cf6;
+  --secondary-foreground: #ffffff;
+  --accent: #06b6d4;
+  --bg-light: #111827;
   --text-light: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-light: #374151;
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 /* Apply our background & text colors using the CSS variables */
@@ -30,39 +38,415 @@ body {
   background-color: var(--bg-light);
   color: var(--text-light);
   transition: background-color 0.3s, color 0.3s;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.6;
 }
 
-/* Use the primary color for headings */
-h1,
+/* Typography improvements */
+h1 {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
 h2 {
   color: var(--primary);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+
+h3 {
+  color: var(--text-light);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* List styling */
+ul {
+  line-height: 1.7;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Link styling */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Strong text styling */
+strong {
+  color: var(--text-light);
+  font-weight: 600;
 }
 
 /* Button styling */
 .btn {
-  padding: 0.25rem 0.75rem; /* Smaller padding */
-  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 0.875rem; /* Reduced font size */
-  transition: background-color 0.3s;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px var(--shadow);
 }
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
 .btn-primary {
-  background-color: var(--primary-foreground);
-  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--primary-foreground);
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary);
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .btn-secondary {
-  background-color: var(--secondary);
-  color: #fff;
+  background: linear-gradient(135deg, var(--secondary), #a855f7);
+  color: var(--secondary-foreground);
   border: none;
-  cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-foreground);
+  background: linear-gradient(135deg, #a855f7, var(--secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Focus states for accessibility */
+.btn:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Header styling */
+header {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.8)
+  );
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.dark header {
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.9),
+    rgba(17, 24, 39, 0.8)
+  );
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Card-like sections */
+section {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.dark section {
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid var(--border-light);
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to sections */
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered animation for multiple sections */
+section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+section:nth-child(2) {
+  animation-delay: 0.2s;
+}
+section:nth-child(3) {
+  animation-delay: 0.3s;
+}
+section:nth-child(4) {
+  animation-delay: 0.4s;
+}
+section:nth-child(5) {
+  animation-delay: 0.5s;
+}
+section:nth-child(6) {
+  animation-delay: 0.6s;
+}
+section:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+/* Footer styling */
+footer {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border-radius: 0.75rem 0.75rem 0 0;
+  margin-top: 3rem;
+}
+
+/* Visitor counter enhancements */
+#visitorCounterBadge {
+  animation: slideInRight 0.8s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Reduce animation delays on mobile */
+  section:nth-child(n) {
+    animation-delay: 0.1s;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  h2::after {
+    width: 30px;
+    height: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .btn {
+    display: none;
+  }
+
+  #visitorCounterBadge {
+    display: none;
+  }
+
+  section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #0000ff;
+    --secondary: #ff0000;
+    --accent: #00ff00;
+  }
+
+  .dark {
+    --primary: #00ffff;
+    --secondary: #ff00ff;
+    --accent: #ffff00;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  section {
+    animation: none;
+  }
+
+  #visitorCounterBadge {
+    animation: none;
+  }
+}
+
+/* Performance optimizations */
+img {
+  loading: lazy;
+}
+
+/* Focus management for better accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Skip link styling */
+.sr-only:focus {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+/* Improved focus indicators */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Better contrast for links */
+a:focus {
+  background-color: var(--accent);
+  color: white;
+  text-decoration: none;
+}
+
+/* Enhanced button focus states */
+.btn:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
 }
