@@ -26,11 +26,11 @@ resource "aws_dynamodb_table" "visitor_counter" {
 resource "aws_iam_role" "lambda_role" {
   name = "visitor-counter-lambda-role"
   assume_role_policy = jsonencode({
-    Version   = "2012-10-17",
+    Version = "2012-10-17",
     Statement = [
       {
-        Action    = "sts:AssumeRole",
-        Effect    = "Allow",
+        Action = "sts:AssumeRole",
+        Effect = "Allow",
         Principal = {
           Service = "lambda.amazonaws.com"
         }
@@ -45,12 +45,12 @@ resource "aws_iam_role_policy_attachment" "lambda_basic_execution" {
 }
 
 resource "aws_iam_policy" "dynamodb_policy" {
-  name   = "visitor-counter-dynamodb-policy"
+  name = "visitor-counter-dynamodb-policy"
   policy = jsonencode({
-    Version   = "2012-10-17",
+    Version = "2012-10-17",
     Statement = [
       {
-        Action   = [
+        Action = [
           "dynamodb:UpdateItem",
           "dynamodb:GetItem",
           "dynamodb:Scan",
@@ -146,10 +146,10 @@ resource "aws_api_gateway_method" "options_visitor" {
 }
 
 resource "aws_api_gateway_integration" "options_visitor_integration" {
-  rest_api_id             = aws_api_gateway_rest_api.visitor_api.id
-  resource_id             = aws_api_gateway_resource.visitor.id
-  http_method             = aws_api_gateway_method.options_visitor.http_method
-  type                    = "MOCK"
+  rest_api_id = aws_api_gateway_rest_api.visitor_api.id
+  resource_id = aws_api_gateway_resource.visitor.id
+  http_method = aws_api_gateway_method.options_visitor.http_method
+  type        = "MOCK"
 }
 
 resource "aws_api_gateway_method_response" "options_visitor" {
@@ -216,7 +216,7 @@ resource "aws_cloudfront_distribution" "api_distribution" {
     domain_name = "${aws_api_gateway_rest_api.visitor_api.id}.execute-api.${var.aws_region}.amazonaws.com"
     origin_id   = "api-gateway-origin"
     origin_path = "/${var.api_stage}"
-    
+
     custom_origin_config {
       http_port              = 443
       https_port             = 443
@@ -239,7 +239,7 @@ resource "aws_cloudfront_distribution" "api_distribution" {
     forwarded_values {
       query_string = true
       headers      = ["CloudFront-Viewer-Country", "CloudFront-Viewer-Country-Region", "CloudFront-Viewer-Country-Name"]
-      
+
       cookies {
         forward = "none"
       }

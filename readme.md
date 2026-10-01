@@ -1,289 +1,61 @@
-# Cloud Resume Challenge
+# Role-adaptive Cloud Resume
 
-A modern, cloud-hosted resume built with AWS serverless architecture, featuring a visitor counter and responsive design.
+Aashaya Aryal's resume at [resume.karuifeather.com](https://resume.karuifeather.com). Three targeted views share one validated career dataset: Software Engineering (default), Data / AI / ML, and Cybersecurity. Full Background exposes all active professional content.
 
-## Live Demo
+## Frontend
 
-Visit the live resume: [Your Cloud Resume URL]
+The existing Vite static site uses TypeScript, semantic HTML, and plain CSS. No application framework, new backend, CMS, or database is needed. YAML is loaded and validated with Zod at build time; neither library is sent to the browser. The existing visitor-counter service remains optional and cannot block rendering.
 
-## Project Overview
-
-This project is part of the [Cloud Resume Challenge](https://cloudresumechallenge.dev) and demonstrates full-stack cloud development skills using AWS services. The resume features a visitor counter that tracks unique visitors using serverless architecture.
-
-## Architecture
-
-### Frontend
-
-- **Framework**: JavaScript with Vite
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **Features**:
-  - Responsive design
-  - Dark mode toggle
-  - Visitor counter display
-  - Modern UI/UX
-
-### Backend
-
-- **Runtime**: Python 3.11 (AWS Lambda)
-- **Database**: DynamoDB
-- **API**: API Gateway
-- **CDN**: CloudFront
-- **Infrastructure**: Terraform
-
-### AWS Services Used
-
-- **Lambda**: Serverless function for visitor counting
-- **DynamoDB**: NoSQL database for session tracking
-- **API Gateway**: RESTful API endpoint
-- **CloudFront**: Global CDN for performance
-- **S3**: Static website hosting (implied)
-- **IAM**: Role-based access control
-
-## Technology Stack
-
-### Frontend
-
-- HTML5, CSS3, JavaScript (ES6+)
-- Tailwind CSS for styling
-- Vite for build tooling
-- Font Awesome for icons
-
-### Backend
-
-- Python 3.11
-- AWS Lambda
-- DynamoDB
-- Boto3 SDK
-
-### Infrastructure
-
-- Terraform for IaC
-- AWS S3 for state management
-- CloudFront for global distribution
-
-## Project Structure
-
-```
-cloudresume/
-├── frontend/
-│   ├── index.html          # Main resume page
-│   ├── src/
-│   │   ├── main.js         # JavaScript functionality
-│   │   └── styles.css      # Custom styles
-│   ├── package.json        # Dependencies
-│   └── vite.config.mjs     # Build configuration
-├── backend/
-│   ├── lambda_cloudresume/
-│   │   ├── app.py          # Lambda function
-│   │   ├── package.sh      # Deployment script
-│   │   └── tests/          # Unit tests
-│   └── terraform/
-│       ├── main.tf         # Infrastructure definition
-│       ├── variables.tf    # Configuration variables
-│       └── output.tf       # Output values
-└── README.md
+```sh
+cd frontend
+corepack yarn@1.22.22 install --frozen-lockfile
+yarn dev
 ```
 
-## Getting Started
+Node 18.19+ is needed for the TypeScript test loader; Node 22 is recommended for development. Yarn Classic is pinned in `package.json` and retains the existing lockfile format.
 
-### Prerequisites
-
-- Node.js (v16+)
-- Python 3.11+
-- AWS CLI configured
-- Terraform installed
-- Git
-
-### Frontend Development
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://github.com/karuifeather/cloudresume.git
-   cd cloudresume
-   ```
-
-2. **Install dependencies**:
-
-   ```bash
-   cd frontend
-   yarn install
-   ```
-
-3. **Start development server**:
-
-   ```bash
-   yarn dev
-   ```
-
-4. **Build for production**:
-   ```bash
-   yarn build
-   ```
-
-### Backend Deployment
-
-1. **Configure AWS credentials**:
-
-   ```bash
-   aws configure
-   ```
-
-2. **Deploy infrastructure**:
-
-   ```bash
-   cd backend/terraform
-   terraform init
-   terraform plan
-   terraform apply
-   ```
-
-3. **Deploy Lambda function**:
-   ```bash
-   cd ../lambda_cloudresume
-   ./package.sh
-   cd ../terraform
-   terraform apply
-   ```
-
-## Features
-
-### Visitor Counter
-
-- **Session Tracking**: Prevents duplicate counting for same IP per day
-- **Real-time Updates**: Live visitor count display
-- **Scalable**: Serverless architecture handles traffic spikes
-
-### Responsive Design
-
-- **Mobile-first**: Optimized for all device sizes
-- **Dark Mode**: Toggle between light and dark themes
-- **Accessibility**: WCAG compliant design
-
-### Performance
-
-- **CDN**: CloudFront for global content delivery
-- **Caching**: Optimized caching strategies
-- **Fast Loading**: Minimal JavaScript and CSS
-
-## 🧪 Testing
-
-### Unit Tests
-
-```bash
-cd backend/lambda_cloudresume
-python -m pytest tests/
+```sh
+yarn validate       # YAML schema and reference checks
+yarn typecheck      # strict TypeScript
+yarn test           # content discovery, targeting, validation, rendering
+yarn build          # typecheck + validated Vite production build
+yarn test:browser   # Chrome: URL state, keyboard/mobile behavior, PDFs
+yarn format         # format frontend code, styles, and content with Prettier
+yarn format:check   # check formatting without changing files
 ```
 
-### Manual Testing
+No lint configuration existed in this repository. Typechecking and automated tests cover the new frontend. Browser tests use Chrome at `/usr/bin/google-chrome` (override with `CHROME_PATH`) and Poppler's `pdfinfo` / `pdftotext`. Tests write screenshots and Letter PDFs into ignored `frontend/test-results/`.
 
-1. Visit the resume page
-2. Check visitor counter increments
-3. Refresh page - counter should not increment
-4. Test responsive design on different devices
+## Content and architecture
 
-## Monitoring
+- [`frontend/content/`](frontend/content/README.md): one YAML file per project, job, degree, certification, award, publication, and skill; profile facts and track presentation configurations.
+- `frontend/src/content/schema.ts`: strict schemas; `frontend/scripts/load-content.ts`: automatic recursive discovery and reference validation.
+- `frontend/vite.config.mts`: compiles content into a virtual module; malformed content fails builds, including archived records.
+- `frontend/src/content/engine.ts`: deterministic ranking, visibility, variants, and print limits.
+- `frontend/src/render.ts`: separate `WebResume` and `PrintResume` renderers.
+- `frontend/src/main.ts`: query-string state, history, accessible role switching, metadata, and print preview.
+- `frontend/src/styles.css` / `print.css`: responsive web styling and dedicated Letter print layout.
 
-### CloudWatch Logs
+See the [content maintenance guide](frontend/content/README.md) for exact add/edit workflows and publication fields. No central import list needs updating.
 
-- Lambda function logs
-- API Gateway logs
-- Error tracking and debugging
+## Sharing and printing
 
-### Metrics
+Share `/?role=software`, `/?role=data-ai`, or `/?role=cybersecurity`; `/?role=full` opens Full Background. Explicit URLs control the view, including refresh and browser history. No static-host routing rewrites are required.
 
-- Visitor count tracking
-- API response times
-- Error rates
+“View print resume” opens the selected print layout. “Print / Save PDF” always prints the dedicated renderer. Software and Cybersecurity target one Letter page; Data/AI uses two. Chrome settings: Letter, 100% scale, headers/footers off. Recheck pagination after adding content; selection budgets live in track YAML.
 
-## Security
-
-- **IAM Roles**: Least privilege access
-- **HTTPS**: SSL/TLS encryption
-- **CORS**: Proper cross-origin configuration
-- **Input Validation**: Sanitized user inputs
+Document titles, descriptions, Open Graph tags, and structured data update in the browser. Crawlers that do not execute JavaScript see default Software metadata; per-query server-rendered social previews are intentionally outside this static architecture.
 
 ## Deployment
 
-### Infrastructure
+The existing GitHub Actions frontend pipeline installs with Yarn, builds `frontend/dist`, syncs it to the existing S3 prefix, and invalidates CloudFront. Deployment destinations and AWS configuration remain unchanged. Build-time content validation and typechecking prevent invalid resumes from reaching the sync step.
 
-```bash
-cd backend/terraform
-terraform init
-terraform plan
-terraform apply
+The existing `backend/lambda_cloudresume/` Python visitor counter and `backend/terraform/` infrastructure are unchanged. Backend tests remain:
+
+```sh
+cd backend/lambda_cloudresume
+poetry install
+poetry run pytest tests/
 ```
 
-### Frontend
-
-```bash
-cd frontend
-yarn build
-# Deploy dist/ folder to S3
-```
-
-## 📈 Performance Optimizations
-
-- **CloudFront**: Global CDN for fast content delivery
-- **Lambda**: Serverless scaling
-- **DynamoDB**: NoSQL for fast queries
-- **Minification**: Optimized assets
-
-## Development
-
-### Local Development
-
-1. Frontend: `yarn dev`
-2. Backend: Test Lambda function locally
-3. Database: Use DynamoDB Local
-
-### CI/CD
-
-- Automated testing
-- Infrastructure validation
-- Deployment pipelines
-
-## 📝 API Documentation
-
-### Endpoints
-
-- `GET /visitor` - Returns visitor count
-
-### Response Format
-
-```json
-{
-  "visitor_count": 123
-}
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Aashaya Aryal**
-
-- Email: ash@karuifeather.com
-- GitHub: [@karuifeather](https://github.com/karuifeather)
-
-## Acknowledgments
-
-- [Cloud Resume Challenge](https://cloudresumechallenge.dev) for the inspiration
-- AWS for the serverless platform
-- Tailwind CSS for the styling framework
-- Vite for the build tooling
-
----
-
-**Note**: This project demonstrates full-stack cloud development skills and follows AWS best practices for serverless architecture.
+No deployment is performed by local build/test commands.

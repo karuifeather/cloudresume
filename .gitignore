@@ -8,3 +8,5 @@ env/
 **/.terraform/
 terraform.tfstate
 *.tfstate.backup
+frontend/test-results/
+frontend/playwright-report/
