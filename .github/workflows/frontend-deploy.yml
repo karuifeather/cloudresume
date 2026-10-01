@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'frontend/**' # Only trigger when something in the `frontend` changes
+      - '.github/workflows/frontend-deploy.yml'
 
 jobs:
   deploy:
@@ -20,13 +21,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       # Change into the frontend folder, install dependencies, and build the project
       - name: Install Dependencies & Build
         run: |
           cd frontend
-          yarn install
+          yarn install --frozen-lockfile
           yarn build
 
       # Configure AWS credentials from secrets

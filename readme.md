@@ -12,7 +12,7 @@ corepack yarn@1.22.22 install --frozen-lockfile
 yarn dev
 ```
 
-Node 18.19+ is needed for the TypeScript test loader; Node 22 is recommended for development. Yarn Classic is pinned in `package.json` and retains the existing lockfile format.
+Node 22+ is required; deployment CI uses Node 22. Yarn Classic is pinned in `package.json`, and CI installs from the existing lockfile with `--frozen-lockfile`.
 
 ```sh
 yarn validate       # YAML schema and reference checks

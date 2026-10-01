@@ -5,6 +5,9 @@
   "type": "module",
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "yarn typecheck && vite build",
