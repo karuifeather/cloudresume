@@ -1,0 +1,81 @@
+id: featherspace
+name: FeatherSpace
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 100
+  data-ai:
+    visibility: hidden
+    priority: 100
+  cybersecurity:
+    visibility: secondary
+    priority: 100
+skills:
+  - react
+  - typescript
+  - webrtc
+  - yjs
+  - cloudflare
+  - codemirror-6
+  - web-workers
+  - indexeddb
+  - opfs
+  - esbuild-wasm
+  - websockets
+  - turn
+  - aes-gcm
+  - vitest
+  - playwright
+bullets:
+  - id: featherspace-accomplishment-1
+    text:
+      Architected and shipped a browser coding workspace with JavaScript/Python scratchpads, test
+      execution, live HTML/CSS/JS preview, a visual board, and durable **IndexedDB/OPFS** storage.
+    tracks:
+      software:
+        visibility: featured
+        priority: 100
+      data-ai:
+        visibility: normal
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 100
+    variants:
+      software:
+        Shipped a browser coding workspace with JavaScript/Python scratchpads, test execution, live
+        previews, and durable **IndexedDB/OPFS** storage.
+  - id: featherspace-accomplishment-2
+    text: Built in-browser execution with CodeMirror 6 and esbuild-wasm in a Web Worker.
+  - id: featherspace-accomplishment-3
+    text:
+      Engineered **Yjs CRDT/WebRTC** collaboration with WebSocket signaling, TURN traversal, follow mode,
+      and reconnect recovery.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 95
+      cybersecurity:
+        visibility: normal
+        priority: 95
+  - id: featherspace-accomplishment-4
+    text:
+      Secured sessions with **AES-GCM** end-to-end encryption, safe key handling, telemetry sanitization,
+      CSP/HSTS controls, and Vitest/Playwright coverage for synchronization, performance, memory, and
+      reliability.
+    tracks:
+      software:
+        visibility: normal
+        priority: 100
+      data-ai:
+        visibility: normal
+        priority: 100
+      cybersecurity:
+        visibility: featured
+        priority: 100
+subtitle: Local-First Collaborative Coding Workspace
+url: https://featherspace.dev

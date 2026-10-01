@@ -1,0 +1,14 @@
+id: elt
+name: ELT
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 91
+  data-ai:
+    visibility: featured
+    priority: 91
+  cybersecurity:
+    visibility: hidden
+    priority: 91

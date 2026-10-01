@@ -1,0 +1,14 @@
+id: ipv6
+name: IPv6
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 81
+  data-ai:
+    visibility: secondary
+    priority: 81
+  cybersecurity:
+    visibility: featured
+    priority: 81

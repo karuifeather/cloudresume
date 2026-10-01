@@ -1,0 +1,18 @@
+id: jsu-mscs
+name: M.S. Computer Science
+institution: Jacksonville State University
+location: Jacksonville, AL
+start: 2025-08
+end: 2026-12
+gpa: 4.0
+expected: true
+tracks:
+  software:
+    visibility: normal
+    priority: 100
+  data-ai:
+    visibility: normal
+    priority: 100
+  cybersecurity:
+    visibility: normal
+    priority: 100

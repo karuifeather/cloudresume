@@ -1,0 +1,14 @@
+id: cassandra
+name: Cassandra
+category: Databases
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 95
+  data-ai:
+    visibility: normal
+    priority: 95
+  cybersecurity:
+    visibility: normal
+    priority: 95

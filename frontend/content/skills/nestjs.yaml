@@ -1,0 +1,14 @@
+id: nestjs
+name: NestJS
+category: Backend & APIs
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 97
+  data-ai:
+    visibility: secondary
+    priority: 97
+  cybersecurity:
+    visibility: secondary
+    priority: 97

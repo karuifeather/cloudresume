@@ -1,0 +1,14 @@
+id: sockperf
+name: SockPerf
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 75
+  data-ai:
+    visibility: secondary
+    priority: 75
+  cybersecurity:
+    visibility: featured
+    priority: 75

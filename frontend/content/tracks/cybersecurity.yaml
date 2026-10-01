@@ -1,0 +1,55 @@
+id: cybersecurity
+name: Cybersecurity
+title: Cybersecurity Engineer
+headline: Network Security • Security Engineering • Risk & IAM
+summary:
+  M.S. Computer Science candidate with hands-on experience in security monitoring, IAM/access reviews,
+  vulnerability and risk assessment, secure cloud systems, and network defense. Built and evaluated IDS/IPS,
+  VPN, and local network-monitoring systems using Suricata, Zeek, AWS, Linux, Python, and statistical/ML
+  techniques.
+capabilities:
+  - name: Network Security
+    skills:
+      - zeek
+      - suricata
+      - wireshark
+      - nmap
+      - wireguard
+  - name: Cloud & IAM Security
+    skills:
+      - aws-iam
+      - least-privilege
+      - audit-logging
+      - access-reviews
+  - name: Security Engineering
+    skills:
+      - ids
+      - ips
+      - vulnerability-scanning
+      - linux
+      - python
+print:
+  focusLine: CYBERSECURITY | NETWORK SECURITY | RISK & IAM
+  projects: 2
+  experienceBullets: 2
+  projectBullets: 2
+  skillsPerCategory: 5
+  skillCategories:
+    - Security & networking
+    - Cloud
+    - Languages
+    - Production & operations
+  minVisibility: normal
+  projectsOnNewPage: false
+  summary:
+    M.S. Computer Science candidate experienced in security monitoring, IAM/access reviews, risk
+    assessment, and network defense. Built and evaluated IDS/IPS, VPN, and monitoring systems with Suricata,
+    Zeek, AWS, Linux, and Python.
+  experienceBulletLimits:
+    mein-bowl-team-lead: 2
+    bidhee-java-developer: 1
+    upwork-fullstack: 1
+  experiences: 3
+web:
+  projectsMinVisibility: normal
+  skillsMinVisibility: normal

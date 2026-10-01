@@ -1,0 +1,14 @@
+id: monitoring
+name: monitoring
+category: Analytics & modeling
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 93
+  data-ai:
+    visibility: featured
+    priority: 93
+  cybersecurity:
+    visibility: hidden
+    priority: 93

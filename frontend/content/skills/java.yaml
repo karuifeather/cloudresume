@@ -1,0 +1,14 @@
+id: java
+name: Java
+category: Languages
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 198
+  data-ai:
+    visibility: normal
+    priority: 98
+  cybersecurity:
+    visibility: secondary
+    priority: 98

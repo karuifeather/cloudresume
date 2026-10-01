@@ -1,0 +1,74 @@
+id: bidhee-java-developer
+name: Bidhee Pvt. Ltd.
+role: Java Developer
+location: Kathmandu, Nepal
+start: 2018-05
+end: 2020-07
+tracks:
+  software:
+    visibility: normal
+    priority: 80
+  data-ai:
+    visibility: normal
+    priority: 80
+  cybersecurity:
+    visibility: normal
+    priority: 80
+skills:
+  - java
+  - spring-mvc
+  - hibernate
+  - angularjs
+  - sql-server
+  - oracle
+  - azure-functions
+  - mule-esb
+  - ftp
+  - jms
+  - junit
+  - maven
+  - ant
+  - jenkins
+bullets:
+  - id: enterprise-applications
+    text:
+      Developed modular **Java/Spring** web applications and database-backed integrations using Hibernate,
+      AngularJS, SQL Server, Oracle, Azure Functions, Mule ESB, FTP, and JMS.
+    tracks:
+      software:
+        visibility: featured
+        priority: 100
+      data-ai:
+        visibility: featured
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 100
+  - id: release-engineering
+    text:
+      Automated testing, builds, and deployment using **JUnit, Maven, Ant, and Jenkins**; supported reliable
+      releases and production issue resolution.
+    tracks:
+      software:
+        visibility: featured
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 90
+      cybersecurity:
+        visibility: featured
+        priority: 90
+  - id: development-lifecycle
+    text:
+      Contributed across the software development lifecycle, translating requirements into design, implementation,
+      testing, debugging, documentation, and production-ready releases.
+    tracks:
+      software:
+        visibility: normal
+        priority: 50
+      data-ai:
+        visibility: secondary
+        priority: 50
+      cybersecurity:
+        visibility: normal
+        priority: 50

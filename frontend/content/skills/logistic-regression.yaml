@@ -1,0 +1,14 @@
+id: logistic-regression
+name: Logistic Regression
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 10
+  data-ai:
+    visibility: secondary
+    priority: 10
+  cybersecurity:
+    visibility: secondary
+    priority: 10

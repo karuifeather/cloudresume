@@ -1,0 +1,13 @@
+id: acm
+name: ACM
+kind: membership
+tracks:
+  software:
+    visibility: secondary
+    priority: 50
+  data-ai:
+    visibility: secondary
+    priority: 50
+  cybersecurity:
+    visibility: secondary
+    priority: 50

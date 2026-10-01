@@ -1,0 +1,14 @@
+id: zeek
+name: Zeek
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 89
+  data-ai:
+    visibility: secondary
+    priority: 89
+  cybersecurity:
+    visibility: featured
+    priority: 198

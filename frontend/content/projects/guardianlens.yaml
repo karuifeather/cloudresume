@@ -1,0 +1,39 @@
+id: guardianlens
+name: GuardianLens + GuardianNode
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 85
+  data-ai:
+    visibility: secondary
+    priority: 85
+  cybersecurity:
+    visibility: featured
+    priority: 85
+skills:
+  - python
+  - zeek
+  - suricata
+  - fastapi
+  - clickhouse
+  - kotlin
+  - linux
+bullets:
+  - id: guardianlens-accomplishment-1
+    text:
+      Built a local security-monitoring platform with Zeek/Suricata telemetry ingestion, authenticated
+      APIs, persistent evidence/device stores, DNS activity views, and continuous IPv4 monitoring.
+    variants:
+      software:
+        Engineered a local security-monitoring platform with authenticated FastAPI APIs, persistent
+        evidence/device stores, and Zeek/Suricata telemetry ingestion.
+  - id: guardianlens-accomplishment-2
+    text:
+      Implemented TLS/certificate pinning, credential revocation/rotation, permission-scoped access,
+      immutable policy revisions, and actor-attributed audit records.
+  - id: guardianlens-accomplishment-3
+    text:
+      Added evidence-backed device attribution, private-LAN discovery, IPv4/IPv6 inventory, and crash-safe
+      network restoration.
+year: 2026

@@ -1,0 +1,14 @@
+id: spring-security
+name: Spring Security
+category: Backend & APIs
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 98
+  data-ai:
+    visibility: secondary
+    priority: 98
+  cybersecurity:
+    visibility: secondary
+    priority: 98

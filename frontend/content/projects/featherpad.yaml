@@ -1,0 +1,41 @@
+id: featherpad
+name: FeatherPad
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 90
+  data-ai:
+    visibility: secondary
+    priority: 90
+  cybersecurity:
+    visibility: secondary
+    priority: 90
+skills:
+  - react
+  - typescript
+  - redux
+  - localforage
+  - esbuild-wasm
+  - indexeddb
+  - iframe
+  - postmessage
+bullets:
+  - id: featherpad-accomplishment-1
+    text:
+      Built a local-first, block-based notebook with durable offline persistence using **Redux** and
+      browser storage.
+  - id: featherpad-accomplishment-2
+    text:
+      Implemented an **esbuild-wasm** bundler with custom resolver/fetch-cache plugins, debounced/manual
+      builds, and per-note dependency locking for reproducibility.
+    variants:
+      software:
+        Built an **esbuild-wasm** bundler with resolver/cache plugins and per-note dependency locking
+        for reproducible builds.
+  - id: featherpad-accomplishment-3
+    text:
+      Designed **sandboxed iframe** execution without same-origin access, using postMessage for
+      logging/error capture and IndexedDB caching for faster rebuilds.
+subtitle: Local-First Notebook
+url: https://notebook.karuifeather.com

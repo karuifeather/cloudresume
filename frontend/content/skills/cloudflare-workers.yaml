@@ -1,0 +1,14 @@
+id: cloudflare-workers
+name: Cloudflare Workers
+category: Cloud
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 90
+  data-ai:
+    visibility: normal
+    priority: 90
+  cybersecurity:
+    visibility: normal
+    priority: 90

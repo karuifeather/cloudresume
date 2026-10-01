@@ -1,0 +1,14 @@
+id: r
+name: R
+category: Languages
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 96
+  data-ai:
+    visibility: featured
+    priority: 199
+  cybersecurity:
+    visibility: secondary
+    priority: 96

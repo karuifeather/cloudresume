@@ -1,0 +1,33 @@
+id: retail-customer-analytics
+name: Retail Customer Analytics & Predictive Modeling
+active: true
+tracks:
+  software:
+    visibility: hidden
+    priority: 75
+  data-ai:
+    visibility: featured
+    priority: 75
+  cybersecurity:
+    visibility: hidden
+    priority: 75
+skills:
+  - r
+  - rfm-analysis
+  - multiple-linear-regression
+  - k-means
+  - ggplot2
+bullets:
+  - id: retail-customer-analytics-accomplishment-1
+    text:
+      Cleaned and analyzed 348,902 UK retail transactions, correcting invalid product records and removing
+      negative price/quantity rows and empty descriptions; engineered transaction-value and customer-level
+      RFM features.
+  - id: retail-customer-analytics-accomplishment-2
+    text:
+      Trained an 80/20 multiple linear regression model for customer monetary value (R² = 0.609), identifying
+      Frequency and Quantity as significant predictors.
+  - id: retail-customer-analytics-accomplishment-3
+    text:
+      Standardized RFM features and applied K-means with k = 4. Identified actionable customer segments,
+      including a 22-customer very-high-value group averaging 61.5 purchases and 71,239 in monetary value.

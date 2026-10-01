@@ -1,0 +1,14 @@
+id: risk-assessment
+name: risk assessment
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 98
+  data-ai:
+    visibility: secondary
+    priority: 98
+  cybersecurity:
+    visibility: featured
+    priority: 98

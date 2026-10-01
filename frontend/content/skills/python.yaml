@@ -1,0 +1,14 @@
+id: python
+name: Python
+category: Languages
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 97
+  data-ai:
+    visibility: featured
+    priority: 200
+  cybersecurity:
+    visibility: featured
+    priority: 200

@@ -1,0 +1,18 @@
+id: jsu-bscs
+name: B.S. Computer Science
+institution: Jacksonville State University
+location: Jacksonville, AL
+start: 2021-08
+end: 2025-05
+gpa: 3.8
+expected: false
+tracks:
+  software:
+    visibility: normal
+    priority: 90
+  data-ai:
+    visibility: normal
+    priority: 90
+  cybersecurity:
+    visibility: normal
+    priority: 90

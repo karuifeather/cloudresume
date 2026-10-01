@@ -1,0 +1,35 @@
+name: Aashaya Aryal
+location: Jacksonville, AL
+phone: 830-344-0168
+email: ash@karuifeather.com
+website: https://karuifeather.com
+coursework:
+  - id: jsu-coursework
+    text:
+      "Relevant JSU coursework: Introduction to Data Science; Predictive Analysis; Applied Statistical
+      Methods; Business Intelligence; Database Systems."
+    tracks:
+      software:
+        visibility: hidden
+        priority: 50
+      data-ai:
+        visibility: normal
+        priority: 50
+      cybersecurity:
+        visibility: hidden
+        priority: 50
+  - id: data-science-topics
+    text:
+      "Introduction to Data Science topics: Python + SQL, data modeling and cloud storage, ETL + Apache
+      Airflow, Apache Spark, PySpark, Databricks, streaming with Apache Kafka, Apache Flink, cloud warehousing,
+      monitoring, Microsoft Fabric, and Snowflake."
+    tracks:
+      software:
+        visibility: hidden
+        priority: 50
+      data-ai:
+        visibility: secondary
+        priority: 50
+      cybersecurity:
+        visibility: hidden
+        priority: 50

@@ -1,0 +1,14 @@
+id: codemirror-6
+name: CodeMirror 6
+category: Web & collaboration
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 95
+  data-ai:
+    visibility: secondary
+    priority: 95
+  cybersecurity:
+    visibility: secondary
+    priority: 95

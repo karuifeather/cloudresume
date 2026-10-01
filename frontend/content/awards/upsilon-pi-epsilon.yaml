@@ -1,0 +1,13 @@
+id: upsilon-pi-epsilon
+name: Upsilon Pi Epsilon
+kind: membership
+tracks:
+  software:
+    visibility: secondary
+    priority: 50
+  data-ai:
+    visibility: secondary
+    priority: 50
+  cybersecurity:
+    visibility: secondary
+    priority: 50

@@ -1,0 +1,14 @@
+id: ndp
+name: NDP
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 78
+  data-ai:
+    visibility: secondary
+    priority: 78
+  cybersecurity:
+    visibility: featured
+    priority: 78

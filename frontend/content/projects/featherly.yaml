@@ -1,0 +1,77 @@
+id: featherly
+name: Featherly
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 95
+  data-ai:
+    visibility: secondary
+    priority: 95
+  cybersecurity:
+    visibility: normal
+    priority: 95
+skills:
+  - angular
+  - nestjs
+  - mongodb
+  - aws
+  - redis
+  - stripe
+  - api-gateway
+  - lambda
+  - ecr
+  - s3
+  - cloudfront
+  - jwt
+bullets:
+  - id: featherly-accomplishment-1
+    text:
+      Shipped a serverless backend using **API Gateway**, **Lambda containers** through **ECR**, and an
+      **S3/CloudFront** SPA. Delivered **76 REST endpoints** across 15 controllers and 22 services.
+    tracks:
+      software:
+        visibility: featured
+        priority: 100
+      data-ai:
+        visibility: normal
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 100
+  - id: featherly-accomplishment-2
+    text:
+      Built multi-tenant authorization, JWT/httpOnly-cookie authentication, origin-locked CORS,
+      Redis-backed rate limiting, and request-ID logging.
+    tracks:
+      software:
+        visibility: normal
+        priority: 100
+      data-ai:
+        visibility: normal
+        priority: 100
+      cybersecurity:
+        visibility: featured
+        priority: 100
+  - id: featherly-accomplishment-3
+    text: Integrated Stripe Billing/Connect payouts with signed, idempotent webhooks.
+  - id: featherly-accomplishment-4
+    text:
+      Operationalized **CI/CD** across audits, tests, builds, migrations, deployment, smoke tests,
+      metrics, caching, and observability. Used AWS IAM/access reviews and least-privilege operations.
+    tracks:
+      software:
+        visibility: featured
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 90
+      cybersecurity:
+        visibility: featured
+        priority: 90
+    variants:
+      software:
+        Automated **CI/CD**, tests, migrations, deployment, and observability; applied **AWS IAM**
+        reviews and least privilege.
+subtitle: Tour Booking Marketplace / Secure AWS Marketplace Backend
+url: https://featherly.karuifeather.com

@@ -1,0 +1,33 @@
+id: reddit-sentiment-analysis
+name: Sentiment Analysis On Reddit Comments
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 65
+  data-ai:
+    visibility: featured
+    priority: 65
+  cybersecurity:
+    visibility: hidden
+    priority: 65
+skills:
+  - r
+  - tidytext
+  - caret
+  - tm
+  - tf-idf
+  - logistic-regression
+  - naive-bayes
+  - random-forest
+bullets:
+  - id: reddit-sentiment-analysis-accomplishment-1
+    text:
+      Built an NLP workflow over 1 million Reddit comments from 40 subreddits using Bing-lexicon sentiment
+      labeling, profanity filtering, sparse-term reduction, and TF-IDF vectorization.
+  - id: reddit-sentiment-analysis-accomplishment-2
+    text:
+      Trained and compared Logistic Regression, Naive Bayes, and Random Forest on an 80/20 split. Used
+      confusion matrices and class-level recall to diagnose severe class imbalance and model bias.
+  - id: reddit-sentiment-analysis-accomplishment-3
+    text: Analyzed sentiment by subreddit, score, and controversiality.

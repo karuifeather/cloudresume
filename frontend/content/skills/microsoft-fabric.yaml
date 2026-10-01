@@ -1,0 +1,14 @@
+id: microsoft-fabric
+name: Microsoft Fabric
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 89
+  data-ai:
+    visibility: featured
+    priority: 183
+  cybersecurity:
+    visibility: hidden
+    priority: 89

@@ -1,0 +1,14 @@
+id: tf-idf
+name: TF-IDF
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 84
+  data-ai:
+    visibility: featured
+    priority: 84
+  cybersecurity:
+    visibility: hidden
+    priority: 84

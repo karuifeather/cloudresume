@@ -1,0 +1,14 @@
+id: lambda
+name: Lambda
+category: Cloud
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 96
+  data-ai:
+    visibility: normal
+    priority: 96
+  cybersecurity:
+    visibility: normal
+    priority: 96

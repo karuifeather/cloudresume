@@ -1,0 +1,14 @@
+id: tensorflow
+name: TensorFlow
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 97
+  data-ai:
+    visibility: featured
+    priority: 194
+  cybersecurity:
+    visibility: hidden
+    priority: 97

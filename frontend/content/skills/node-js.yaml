@@ -1,0 +1,14 @@
+id: node-js
+name: Node.js
+category: Backend & APIs
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 195
+  data-ai:
+    visibility: secondary
+    priority: 96
+  cybersecurity:
+    visibility: secondary
+    priority: 96

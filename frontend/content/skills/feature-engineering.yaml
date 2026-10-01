@@ -1,0 +1,14 @@
+id: feature-engineering
+name: feature engineering
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 81
+  data-ai:
+    visibility: featured
+    priority: 81
+  cybersecurity:
+    visibility: hidden
+    priority: 81

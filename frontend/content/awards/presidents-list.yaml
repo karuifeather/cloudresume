@@ -1,0 +1,17 @@
+id: presidents-list
+name: President’s List
+dates:
+  - "2021"
+  - "2022"
+  - "2023"
+  - "2025"
+tracks:
+  software:
+    visibility: normal
+    priority: 50
+  data-ai:
+    visibility: normal
+    priority: 50
+  cybersecurity:
+    visibility: normal
+    priority: 50

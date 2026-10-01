@@ -1,0 +1,14 @@
+id: regression
+name: regression
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 88
+  data-ai:
+    visibility: featured
+    priority: 88
+  cybersecurity:
+    visibility: hidden
+    priority: 88

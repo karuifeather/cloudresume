@@ -1,0 +1,34 @@
+id: traffic-sign-classification
+name: Traffic Sign Classification With Deep Learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 70
+  data-ai:
+    visibility: featured
+    priority: 70
+  cybersecurity:
+    visibility: hidden
+    priority: 70
+skills:
+  - python
+  - tensorflow
+  - keras
+  - numpy
+  - scikit-learn
+  - pil
+  - tkinter
+bullets:
+  - id: traffic-sign-classification-accomplishment-1
+    text:
+      Built a 43-class image-classification pipeline with images resized to 30×30, encoded labels, and
+      an 80/20 train/test split.
+  - id: traffic-sign-classification-accomplishment-2
+    text: Trained a CNN with four convolution layers, max pooling, dropout, and softmax output.
+  - id: traffic-sign-classification-accomplishment-3
+    text: Evaluated held-out images and plotted training/validation accuracy and loss across 15 epochs.
+  - id: traffic-sign-classification-accomplishment-4
+    text:
+      Persisted the trained model and integrated it into a Tkinter application for user-uploaded image
+      inference.

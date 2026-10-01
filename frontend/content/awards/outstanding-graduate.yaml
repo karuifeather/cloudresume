@@ -1,0 +1,15 @@
+id: outstanding-graduate
+name: Outstanding Graduate in Computer Science
+dates:
+  - "2025"
+tracks:
+  software:
+    visibility: normal
+    priority: 100
+  data-ai:
+    visibility: normal
+    priority: 100
+  cybersecurity:
+    visibility: normal
+    priority: 100
+organization: Jacksonville State University

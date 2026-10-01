@@ -1,0 +1,14 @@
+id: dns
+name: DNS
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 83
+  data-ai:
+    visibility: secondary
+    priority: 83
+  cybersecurity:
+    visibility: featured
+    priority: 83

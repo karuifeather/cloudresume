@@ -1,0 +1,14 @@
+id: scikit-learn
+name: scikit-learn
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 98
+  data-ai:
+    visibility: featured
+    priority: 195
+  cybersecurity:
+    visibility: hidden
+    priority: 98

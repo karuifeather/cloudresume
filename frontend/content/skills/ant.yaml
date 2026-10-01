@@ -1,0 +1,14 @@
+id: ant
+name: Ant
+category: Production & operations
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 93
+  data-ai:
+    visibility: normal
+    priority: 93
+  cybersecurity:
+    visibility: normal
+    priority: 93

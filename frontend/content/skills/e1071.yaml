@@ -1,0 +1,14 @@
+id: e1071
+name: e1071
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 89
+  data-ai:
+    visibility: featured
+    priority: 89
+  cybersecurity:
+    visibility: hidden
+    priority: 89

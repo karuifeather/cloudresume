@@ -1,0 +1,14 @@
+id: tableau
+name: Tableau
+category: Analytics & modeling
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 100
+  data-ai:
+    visibility: featured
+    priority: 185
+  cybersecurity:
+    visibility: hidden
+    priority: 100

@@ -1,0 +1,14 @@
+id: web-workers
+name: Web Workers
+category: Web & collaboration
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 94
+  data-ai:
+    visibility: secondary
+    priority: 94
+  cybersecurity:
+    visibility: secondary
+    priority: 94

@@ -1,0 +1,14 @@
+id: numpy
+name: NumPy
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 99
+  data-ai:
+    visibility: featured
+    priority: 196
+  cybersecurity:
+    visibility: hidden
+    priority: 99

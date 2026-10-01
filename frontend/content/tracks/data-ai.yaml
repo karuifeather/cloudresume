@@ -1,0 +1,51 @@
+id: data-ai
+name: Data / AI / ML
+title: Data Science & ML Engineer
+headline: Machine Learning • Data Engineering • Analytics
+summary:
+  Data science-focused software engineer and M.S. Computer Science candidate with hands-on work
+  across predictive analytics, NLP, deep learning/computer vision, customer segmentation, BI/data modeling,
+  and experimental network-security research. Builds end-to-end workflows from data cleaning and feature
+  engineering through model evaluation, visualization, and deployable applications, backed by experience
+  in distributed data processing, cloud infrastructure, databases, distributed systems, and APIs.
+capabilities:
+  - name: Machine Learning
+    skills:
+      - scikit-learn
+      - tensorflow
+      - nlp
+      - cnns
+      - classification
+  - name: Data Engineering
+    skills:
+      - apache-spark
+      - pyspark
+      - apache-kafka
+      - apache-flink
+      - apache-airflow
+  - name: Analytics & Data Platforms
+    skills:
+      - sql
+      - tableau
+      - snowflake
+      - microsoft-fabric
+      - databricks
+print:
+  focusLine: DATA SCIENCE | MACHINE LEARNING | DATA ENGINEERING
+  projects: 6
+  experienceBullets: 3
+  projectBullets: 3
+  skillsPerCategory: 7
+  skillCategories:
+    - Languages
+    - Machine learning
+    - Data engineering
+    - Analytics & modeling
+  minVisibility: normal
+  projectsOnNewPage: true
+  experienceBulletLimits:
+    mein-bowl-team-lead: 2
+  experiences: 3
+web:
+  projectsMinVisibility: normal
+  skillsMinVisibility: normal

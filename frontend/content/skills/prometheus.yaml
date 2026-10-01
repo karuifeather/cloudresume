@@ -1,0 +1,14 @@
+id: prometheus
+name: Prometheus
+category: Production & operations
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 91
+  data-ai:
+    visibility: normal
+    priority: 91
+  cybersecurity:
+    visibility: normal
+    priority: 91

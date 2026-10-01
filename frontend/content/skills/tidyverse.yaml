@@ -1,0 +1,14 @@
+id: tidyverse
+name: tidyverse
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 94
+  data-ai:
+    visibility: featured
+    priority: 94
+  cybersecurity:
+    visibility: hidden
+    priority: 94

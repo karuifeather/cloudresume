@@ -1,0 +1,14 @@
+id: security-monitoring
+name: security monitoring
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 100
+  data-ai:
+    visibility: secondary
+    priority: 100
+  cybersecurity:
+    visibility: featured
+    priority: 100

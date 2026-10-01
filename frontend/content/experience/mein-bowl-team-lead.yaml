@@ -1,0 +1,66 @@
+id: mein-bowl-team-lead
+name: Mein Bowl, Campus Dining
+role: Team Lead
+start: "2021-08"
+end: "2025-05"
+
+# Started as a regular employee and was promoted during the second year.
+# The operation involved a Sodexo contracting arrangement; this record does not
+# assert a direct Sodexo employment relationship.
+# Approximately six employees were trained over the four-year employment period.
+tracks:
+  software:
+    visibility: normal
+    priority: 65
+  data-ai:
+    visibility: normal
+    priority: 65
+  cybersecurity:
+    visibility: normal
+    priority: 65
+
+skills: []
+
+bullets:
+  - id: team-leadership
+    text:
+      Promoted to **lead**, coordinating staffing, weekly prep, and operational workflows
+      across a team of up to **8 employees**; trained and onboarded **6 employees**
+      and documented repeatable procedures.
+    tracks:
+      software:
+        visibility: normal
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 100
+
+  - id: operational-systems
+    text:
+      Worked with **inventory**, **ordering**, **Excel**, **POS/tablet systems**, and
+      routine technical troubleshooting while managing stock, shipments, invoices,
+      and operational discrepancies.
+    tracks:
+      software:
+        visibility: normal
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 90
+      cybersecurity:
+        visibility: normal
+        priority: 90
+    variants:
+      data-ai:
+        Managed **inventory/order systems**, **Excel-based operational data**, shipments,
+        invoices, and discrepancies while coordinating work across a team of up to
+        **8 employees**.
+
+  - id: demand-planning
+    text:
+      Used **inventory data** and recurring **demand patterns**—including class schedules,
+      campus events, and peak periods—to guide preparation, staffing, and ordering decisions.
+    tracks:
+      data-ai:
+        visibility: normal
+        priority: 100

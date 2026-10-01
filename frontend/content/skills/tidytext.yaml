@@ -1,0 +1,14 @@
+id: tidytext
+name: tidytext
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 92
+  data-ai:
+    visibility: featured
+    priority: 92
+  cybersecurity:
+    visibility: hidden
+    priority: 92

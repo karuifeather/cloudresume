@@ -1,0 +1,14 @@
+id: nginx
+name: Nginx
+category: Production & operations
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 95
+  data-ai:
+    visibility: normal
+    priority: 95
+  cybersecurity:
+    visibility: normal
+    priority: 95

@@ -1,0 +1,14 @@
+id: least-privilege
+name: least privilege
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 95
+  data-ai:
+    visibility: secondary
+    priority: 95
+  cybersecurity:
+    visibility: featured
+    priority: 190

@@ -1,0 +1,14 @@
+id: nmap
+name: Nmap
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 87
+  data-ai:
+    visibility: secondary
+    priority: 87
+  cybersecurity:
+    visibility: featured
+    priority: 195

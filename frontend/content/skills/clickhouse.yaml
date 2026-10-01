@@ -1,0 +1,14 @@
+id: clickhouse
+name: ClickHouse
+category: Databases
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 92
+  data-ai:
+    visibility: normal
+    priority: 92
+  cybersecurity:
+    visibility: normal
+    priority: 92

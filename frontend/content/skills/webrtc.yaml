@@ -1,0 +1,14 @@
+id: webrtc
+name: WebRTC
+category: Web & collaboration
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 93
+  data-ai:
+    visibility: secondary
+    priority: 93
+  cybersecurity:
+    visibility: secondary
+    priority: 93

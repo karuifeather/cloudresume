@@ -1,0 +1,14 @@
+id: apache-airflow
+name: Apache Airflow
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 96
+  data-ai:
+    visibility: featured
+    priority: 186
+  cybersecurity:
+    visibility: hidden
+    priority: 96

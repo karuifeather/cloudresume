@@ -1,0 +1,31 @@
+id: network-intrusion-detection
+name: Machine Learning Network Intrusion Detection
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 80
+  data-ai:
+    visibility: featured
+    priority: 80
+  cybersecurity:
+    visibility: featured
+    priority: 80
+skills:
+  - python
+  - pandas
+  - scikit-learn
+  - flask
+  - network-security
+bullets:
+  - id: network-intrusion-detection-accomplishment-1
+    text:
+      Built a multiclass intrusion-detection workflow to distinguish normal from malicious network activity
+      using preprocessing, categorical encoding, feature analysis/selection, supervised classification,
+      and class-level evaluation.
+  - id: network-intrusion-detection-accomplishment-2
+    text:
+      Compared linear, tree-based, kernel, ensemble, and neural-network approaches using precision,
+      recall, F1, and confusion matrices.
+  - id: network-intrusion-detection-accomplishment-3
+    text: Exposed the selected model through a Flask inference layer for practical monitoring workflows.

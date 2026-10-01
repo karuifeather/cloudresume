@@ -1,0 +1,14 @@
+id: randomforest
+name: randomForest
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 90
+  data-ai:
+    visibility: featured
+    priority: 90
+  cybersecurity:
+    visibility: hidden
+    priority: 90

@@ -1,0 +1,14 @@
+id: aws
+name: AWS
+category: Cloud
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 194
+  data-ai:
+    visibility: normal
+    priority: 100
+  cybersecurity:
+    visibility: normal
+    priority: 100

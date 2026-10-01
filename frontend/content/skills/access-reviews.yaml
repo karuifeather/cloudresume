@@ -1,0 +1,14 @@
+id: access-reviews
+name: access reviews
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 96
+  data-ai:
+    visibility: secondary
+    priority: 96
+  cybersecurity:
+    visibility: featured
+    priority: 189

@@ -1,0 +1,14 @@
+id: audit-logging
+name: audit logging
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 91
+  data-ai:
+    visibility: secondary
+    priority: 91
+  cybersecurity:
+    visibility: featured
+    priority: 188

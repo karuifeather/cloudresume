@@ -1,0 +1,14 @@
+id: apache-spark
+name: Apache Spark
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 100
+  data-ai:
+    visibility: featured
+    priority: 190
+  cybersecurity:
+    visibility: hidden
+    priority: 100

@@ -1,0 +1,31 @@
+id: relational-tableau-analytics
+name: Relational Data Modeling & Tableau Analytics
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 60
+  data-ai:
+    visibility: featured
+    priority: 60
+  cybersecurity:
+    visibility: hidden
+    priority: 60
+skills:
+  - sql-server
+  - erds
+  - relational-modeling
+  - sql
+  - tableau
+bullets:
+  - id: relational-tableau-analytics-accomplishment-1
+    text:
+      Designed and implemented a 20-table restaurant-operations relational schema covering orders, products,
+      members, inventory, suppliers, employees, reviews, and payments, with primary/foreign keys and business
+      constraints.
+  - id: relational-tableau-analytics-accomplishment-2
+    text:
+      Wrote multi-table SQL joins and aggregations for customer, category/subcategory sales, loyalty,
+      and review analysis.
+  - id: relational-tableau-analytics-accomplishment-3
+    text: Connected modeled data to Tableau visualizations and presented the analytics as a final project.

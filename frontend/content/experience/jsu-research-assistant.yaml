@@ -1,0 +1,99 @@
+id: jsu-research-assistant
+name: Jacksonville State University
+role: Research Assistant, Networking Lab
+location: Jacksonville, AL
+start: 2025-08
+end: present
+tracks:
+  software:
+    visibility: featured
+    priority: 100
+  data-ai:
+    visibility: featured
+    priority: 100
+  cybersecurity:
+    visibility: featured
+    priority: 100
+skills:
+  - linux
+  - suricata
+  - openvpn
+  - wireguard
+  - iperf3
+  - hping3
+  - sockperf
+bullets:
+  - id: testbed
+    text:
+      Designed multi-gigabit **Raspberry Pi 4/5** security testbeds and site-to-site VPN topologies;
+      configured **Linux routing**, OpenVPN/WireGuard, **2.5 GbE** links, aggregation, and bidirectional
+      traffic.
+    tracks:
+      software:
+        visibility: featured
+        priority: 100
+      data-ai:
+        visibility: secondary
+        priority: 100
+      cybersecurity:
+        visibility: featured
+        priority: 100
+    variants:
+      software:
+        Designed **Raspberry Pi 4/5** network testbeds with **Linux routing**, **2.5 GbE** links, **NIC
+        bonding**, and failover scenarios for repeatable performance benchmarking.
+  - id: experimental-datasets
+    text:
+      Generated repeatable experimental datasets across controlled traffic rates and packet sizes using
+      **iperf3** and **hping3**.
+    tracks:
+      software:
+        visibility: normal
+        priority: 60
+      data-ai:
+        visibility: featured
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 95
+  - id: benchmark-harness
+    text:
+      Built a version-controlled benchmark harness with **iperf3**, **hping3**, and **SockPerf**;
+      instrumented CPU, memory, interrupts, and network behavior to compare routing, VPN encryption,
+      one-way delay, and resource constraints.
+    tracks:
+      software:
+        visibility: featured
+        priority: 90
+      data-ai:
+        visibility: featured
+        priority: 98
+      cybersecurity:
+        visibility: normal
+        priority: 90
+    variants:
+      data-ai:
+        Instrumented CPU, memory, interrupts, throughput, and packet-processing behavior in reproducible
+        experiments to analyze system load and end-to-end network performance.
+      software:
+        Built a version-controlled **iperf3**, **hping3**, and **SockPerf** harness to measure routing,
+        VPN encryption, latency, and CPU/memory constraints.
+  - id: suricata-benchmark
+    text:
+      Evaluated **Suricata IDS/IPS** at 1 and 2.5 Gbps with ET/Open and a **77,443-rule** configuration;
+      correlated throughput/PPS with CPU, memory, power, and thermals to identify security-processing
+      bottlenecks.
+    tracks:
+      software:
+        visibility: featured
+        priority: 85
+      data-ai:
+        visibility: featured
+        priority: 95
+      cybersecurity:
+        visibility: featured
+        priority: 105
+    variants:
+      software:
+        Profiled **Suricata IDS/IPS** throughput and CPU/memory at 1–2.5 Gbps to isolate processing
+        bottlenecks.

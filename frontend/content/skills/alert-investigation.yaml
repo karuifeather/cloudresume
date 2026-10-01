@@ -1,0 +1,14 @@
+id: alert-investigation
+name: alert investigation
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 99
+  data-ai:
+    visibility: secondary
+    priority: 99
+  cybersecurity:
+    visibility: featured
+    priority: 99

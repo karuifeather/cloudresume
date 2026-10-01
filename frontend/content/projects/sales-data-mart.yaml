@@ -1,0 +1,31 @@
+id: sales-data-mart
+name: Sales Analytics Data Mart & ETL Pipeline
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 55
+  data-ai:
+    visibility: featured
+    priority: 55
+  cybersecurity:
+    visibility: hidden
+    priority: 55
+skills:
+  - sql-server
+  - ssis
+  - adventureworks
+  - dimensional-modeling
+  - etl
+bullets:
+  - id: sales-data-mart-accomplishment-1
+    text:
+      Designed a dimensional sales model. Implemented seven SSIS packages to load Customer, Date, Order,
+      Product, Product Attributes, Sales Territory, and Fact Sales structures from AdventureWorks transactional
+      data.
+  - id: sales-data-mart-accomplishment-2
+    text:
+      Built OLE DB data flows with derived columns, conditional splits, aggregation, multicast, and
+      dimension lookups. Resolved surrogate keys before fact loading.
+  - id: sales-data-mart-accomplishment-3
+    text: Produced reusable sales-analysis outputs.

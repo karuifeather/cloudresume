@@ -1,0 +1,14 @@
+id: statistical-analysis
+name: statistical analysis
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 80
+  data-ai:
+    visibility: featured
+    priority: 80
+  cybersecurity:
+    visibility: hidden
+    priority: 80

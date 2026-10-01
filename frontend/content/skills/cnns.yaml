@@ -1,0 +1,14 @@
+id: cnns
+name: CNNs
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 83
+  data-ai:
+    visibility: featured
+    priority: 191
+  cybersecurity:
+    visibility: hidden
+    priority: 83

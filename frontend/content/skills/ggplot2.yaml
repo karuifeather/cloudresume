@@ -1,0 +1,14 @@
+id: ggplot2
+name: ggplot2
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 93
+  data-ai:
+    visibility: featured
+    priority: 93
+  cybersecurity:
+    visibility: hidden
+    priority: 93

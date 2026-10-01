@@ -1,0 +1,14 @@
+id: sql-server
+name: SQL Server
+category: Databases
+active: true
+tracks:
+  software:
+    visibility: normal
+    priority: 97
+  data-ai:
+    visibility: normal
+    priority: 97
+  cybersecurity:
+    visibility: normal
+    priority: 97

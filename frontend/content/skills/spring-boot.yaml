@@ -1,0 +1,14 @@
+id: spring-boot
+name: Spring Boot
+category: Backend & APIs
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 196
+  data-ai:
+    visibility: secondary
+    priority: 100
+  cybersecurity:
+    visibility: secondary
+    priority: 100

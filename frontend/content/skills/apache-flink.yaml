@@ -1,0 +1,14 @@
+id: apache-flink
+name: Apache Flink
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 94
+  data-ai:
+    visibility: featured
+    priority: 187
+  cybersecurity:
+    visibility: hidden
+    priority: 94

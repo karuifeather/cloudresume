@@ -1,0 +1,14 @@
+id: ids
+name: IDS
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 93
+  data-ai:
+    visibility: secondary
+    priority: 93
+  cybersecurity:
+    visibility: featured
+    priority: 187

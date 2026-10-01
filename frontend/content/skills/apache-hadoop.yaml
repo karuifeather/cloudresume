@@ -1,0 +1,14 @@
+id: apache-hadoop
+name: Apache Hadoop
+category: Data engineering
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 98
+  data-ai:
+    visibility: featured
+    priority: 98
+  cybersecurity:
+    visibility: hidden
+    priority: 98

@@ -1,0 +1,14 @@
+id: flask
+name: Flask
+category: Backend & APIs
+active: true
+tracks:
+  software:
+    visibility: featured
+    priority: 91
+  data-ai:
+    visibility: secondary
+    priority: 91
+  cybersecurity:
+    visibility: secondary
+    priority: 91

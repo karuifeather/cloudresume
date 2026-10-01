@@ -1,0 +1,14 @@
+id: model-evaluation
+name: model evaluation
+category: Machine learning
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 79
+  data-ai:
+    visibility: featured
+    priority: 79
+  cybersecurity:
+    visibility: hidden
+    priority: 79

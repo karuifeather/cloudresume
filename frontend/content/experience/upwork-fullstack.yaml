@@ -1,0 +1,29 @@
+id: upwork-fullstack
+name: Upwork
+role: Freelance Full-Stack Developer
+start: 2016-04
+end: 2017-12
+tracks:
+  software:
+    visibility: normal
+    priority: 60
+  data-ai:
+    visibility: secondary
+    priority: 60
+  cybersecurity:
+    visibility: hidden
+    priority: 60
+skills: []
+bullets:
+  - id: client-delivery
+    text:
+      Managed client web projects from requirements and estimation through development, testing,
+      deployment, and post-launch support.
+    variants:
+      software:
+        Delivered client web projects from requirements through development, testing, deployment, and
+        post-launch support.
+  - id: responsive-websites
+    text:
+      Designed responsive websites and reusable front-end/backend features for restaurants and small
+      businesses, improving online presence, SEO, performance, and cross-browser compatibility.

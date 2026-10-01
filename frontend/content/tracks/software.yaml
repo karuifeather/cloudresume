@@ -1,0 +1,64 @@
+id: software
+name: Software Engineering
+title: Software Engineer
+headline: Full-Stack Engineering • Distributed Systems • Cloud
+summary:
+  Software engineer experienced in full-stack applications, distributed collaboration systems,
+  and secure cloud platforms. Builds maintainable products with TypeScript, React, Java, Spring Boot,
+  Node.js, AWS, and Cloudflare, backed by hands-on work in networking research, Linux systems, performance
+  benchmarking, application security, and production operations.
+capabilities:
+  - name: Full-Stack Engineering
+    skills:
+      - react
+      - typescript
+      - java
+      - spring-boot
+      - node-js
+  - name: Distributed & Cloud Systems
+    skills:
+      - aws
+      - cloudflare
+      - apache-kafka
+      - webrtc
+      - rest-apis
+  - name: Production Engineering
+    skills:
+      - docker
+      - kubernetes
+      - ci-cd
+      - linux
+      - prometheus
+print:
+  focusLine: SOFTWARE ENGINEERING | DISTRIBUTED SYSTEMS | CLOUD
+  projects: 3
+  experienceBullets: 3
+  projectBullets: 2
+  skillsPerCategory: 5
+  skillCategories:
+    - Languages
+    - Web & collaboration
+    - Cloud
+    - Production & operations
+  skillGroups:
+    - name: Languages
+      skills: [typescript, javascript, java, python, sql]
+    - name: Backend
+      skills: [spring-boot, node-js, nestjs, rest-apis]
+    - name: Frontend & Collaboration
+      skills: [react, angular, next-js, webrtc, yjs]
+    - name: Cloud & DevOps
+      skills: [aws, cloudflare, docker, kubernetes, ci-cd, linux]
+  minVisibility: normal
+  projectsOnNewPage: false
+  summary:
+    Software engineer building full-stack applications and distributed systems with TypeScript, React,
+    Java, Spring Boot, AWS, and Cloudflare. Hands-on networking research, Linux, benchmarking, and production operations.
+  experienceBulletLimits:
+    mein-bowl-team-lead: 1
+    bidhee-java-developer: 2
+    upwork-fullstack: 1
+  experiences: 3
+web:
+  projectsMinVisibility: normal
+  skillsMinVisibility: normal

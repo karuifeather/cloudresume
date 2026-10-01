@@ -1,0 +1,14 @@
+id: cloud-warehousing
+name: cloud warehousing
+category: Analytics & modeling
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 94
+  data-ai:
+    visibility: featured
+    priority: 94
+  cybersecurity:
+    visibility: hidden
+    priority: 94

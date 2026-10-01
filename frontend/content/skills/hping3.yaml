@@ -1,0 +1,14 @@
+id: hping3
+name: hping3
+category: Security & networking
+active: true
+tracks:
+  software:
+    visibility: secondary
+    priority: 76
+  data-ai:
+    visibility: secondary
+    priority: 76
+  cybersecurity:
+    visibility: featured
+    priority: 76
