@@ -1,6 +1,12 @@
 import { test, expect } from "@playwright/test";
 import { execFileSync } from "node:child_process";
 
+test.beforeEach(async ({ page }) => {
+  await page.route("https://d2m530ny36pyb5.cloudfront.net/visitor", (route) =>
+    route.fulfill({ json: { visitor_count: 134, countries: ["US", "NP"] } }),
+  );
+});
+
 test("root, URL changes, keyboard switching, refresh and history", async ({
   page,
 }) => {
@@ -57,7 +63,7 @@ for (const [role, title, pages] of [
     await page.goto(`/?role=${role}`);
     await expect(page).toHaveTitle(`Aashaya Aryal | ${title}`);
     await expect(page.locator(".role-title")).toHaveText(title);
-    await expect(page.locator("#visitor-count, .section-nav")).toHaveCount(0);
+    await expect(page.locator(".section-nav")).toHaveCount(0);
     await expect(
       page.locator('#web-resume address a[href^="mailto:"]'),
     ).toHaveAttribute("href", "mailto:ash@karuifeather.com");
@@ -175,3 +181,59 @@ for (const [role, title, pages] of [
     expect(errors).toEqual([]);
   });
 }
+
+test("visitor panel preserves total and observed countries across role changes", async ({
+  page,
+}) => {
+  let requests = 0;
+  await page.route("https://d2m530ny36pyb5.cloudfront.net/visitor", (route) => {
+    requests++;
+    return route.fulfill({
+      json: { visitor_count: 1132, countries: ["US", "NP", "US"] },
+    });
+  });
+  await page.goto("/");
+  await expect(page.locator("#visitor-count")).toHaveText("1,132");
+  await expect(page.locator(".visitor-countries li")).toHaveCount(2);
+  await expect(page.locator(".visitor-countries")).toContainText("🇳🇵 Nepal");
+  await expect(page.locator(".visitor-countries")).toContainText(
+    "🇺🇸 United States",
+  );
+  await page
+    .getByRole("button", { name: "Data / AI / ML", exact: true })
+    .click();
+  await expect(page.locator("#visitor-count")).toHaveText("1,132");
+  expect(requests).toBe(1);
+  await page.setViewportSize({ width: 375, height: 812 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("visitor API failures leave the resume usable without a fake zero", async ({
+  page,
+}) => {
+  await page.route("https://d2m530ny36pyb5.cloudfront.net/visitor", (route) =>
+    route.abort(),
+  );
+  await page.goto("/");
+  await expect(page.locator("#visitor-stats")).toContainText(
+    "temporarily unavailable",
+  );
+  await expect(page.locator("#visitor-count")).toHaveText("—");
+  await expect(page.locator(".visitor-countries li")).toHaveCount(0);
+  await expect(page.locator(".role-title")).toHaveText("Software Engineer");
+});
+
+test("legacy visitor API still displays its historical total", async ({
+  page,
+}) => {
+  await page.route("https://d2m530ny36pyb5.cloudfront.net/visitor", (route) =>
+    route.fulfill({ json: { visitor_count: 132 } }),
+  );
+  await page.goto("/");
+  await expect(page.locator("#visitor-count")).toHaveText("132");
+  await expect(page.locator(".visitor-countries li")).toHaveCount(0);
+});

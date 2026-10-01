@@ -33,6 +33,11 @@ class DummyDynamoDBClient:
         ReturnValues,
     ):
         key = Key["id"]["S"]
+        if ":country" in ExpressionAttributeValues:
+            item = self.data.setdefault(key, {"id": {"S": key}})
+            existing = item.get("countries", {}).get("SS", [])
+            item["countries"] = {"SS": sorted(set(existing + ExpressionAttributeValues[":country"]["SS"]))}
+            return {"Attributes": item}
         inc = int(ExpressionAttributeValues[":inc"]["N"])
         if key not in self.data:
             self.data[key] = {"id": {"S": key}, "count": {"N": "0"}}
@@ -152,3 +157,32 @@ if __name__ == "__main__":
     print("✓ test_lambda_handler_session_tracking passed")
 
     print("All tests passed!")
+
+
+def test_preserves_history_and_records_only_observed_countries():
+    client = DummyDynamoDBClient()
+    client.data["total"]["count"]["N"] = "132"
+    with patch("app.boto3.client", return_value=client), patch.dict(os.environ, {"DYNAMODB_TABLE": "test"}):
+        def visit(ip, country=None):
+            headers = {"x-forwarded-for": ip}
+            if country is not None:
+                headers["cloudfront-viewer-country"] = country
+            return json.loads(lambda_handler({"headers": headers}, {})["body"])
+        assert visit("1.1.1.1", "US") == {"visitor_count": 133, "countries": ["US"]}
+        assert visit("1.1.1.1", "US") == {"visitor_count": 133, "countries": ["US"]}
+        assert visit("2.2.2.2", "NP") == {"visitor_count": 134, "countries": ["NP", "US"]}
+        assert visit("3.3.3.3", "XX") == {"visitor_count": 135, "countries": ["NP", "US"]}
+        assert visit("4.4.4.4") == {"visitor_count": 136, "countries": ["NP", "US"]}
+
+
+def test_country_failure_does_not_hide_or_increment_total_again():
+    client = DummyDynamoDBClient()
+    original = client.update_item
+    def update(**kwargs):
+        if kwargs["Key"]["id"]["S"] == "visitor_countries":
+            raise RuntimeError("unavailable")
+        return original(**kwargs)
+    client.update_item = update
+    with patch("app.boto3.client", return_value=client), patch.dict(os.environ, {"DYNAMODB_TABLE": "test"}):
+        result = lambda_handler({"headers": {"CloudFront-Viewer-Country": "US"}}, {})
+        assert json.loads(result["body"]) == {"visitor_count": 1}

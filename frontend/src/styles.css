@@ -674,3 +674,40 @@ footer a {
     transition: none !important;
   }
 }
+
+/* Secondary visitor information sits quietly below the footer identity. */
+.visitor-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.visitor-total {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.visitor-total strong {
+  font-size: inherit;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.visitor-detail {
+  min-width: 0;
+}
+
+.visitor-countries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

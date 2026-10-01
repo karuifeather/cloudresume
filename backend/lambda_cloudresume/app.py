@@ -3,6 +3,7 @@ import boto3
 import os
 import hashlib
 import time
+import re
 
 
 def lambda_handler(event, context):
@@ -10,18 +11,18 @@ def lambda_handler(event, context):
     TABLE_NAME = os.environ.get("DYNAMODB_TABLE")
 
     # Get client IP for session tracking
-    headers = event.get("headers", {})
+    headers = {key.lower(): value for key, value in (event.get("headers") or {}).items()}
 
     # Try multiple sources for IP address
     client_ip = None
 
     # Try CloudFront headers first
-    if headers.get("CloudFront-Viewer-Address"):
-        client_ip = headers.get("CloudFront-Viewer-Address").split(":")[0]
-    elif headers.get("X-Forwarded-For"):
-        client_ip = headers.get("X-Forwarded-For").split(",")[0].strip()
-    elif headers.get("X-Real-IP"):
-        client_ip = headers.get("X-Real-IP")
+    if headers.get("cloudfront-viewer-address"):
+        client_ip = headers.get("cloudfront-viewer-address").split(":")[0]
+    elif headers.get("x-forwarded-for"):
+        client_ip = headers.get("x-forwarded-for").split(",")[0].strip()
+    elif headers.get("x-real-ip"):
+        client_ip = headers.get("x-real-ip")
     else:
         # Fallback to request context
         client_ip = (
@@ -100,12 +101,42 @@ def lambda_handler(event, context):
         )
         total_count = int(total_response["Attributes"]["count"]["N"])
 
+    # An atomic string set records only observed countries, independently of
+    # the existing total and daily session records. Never reset historical data.
+    countries = None
+    try:
+        country = headers.get("cloudfront-viewer-country", "").upper()
+        if re.fullmatch(r"[A-Z]{2}", country) and country not in {"XX", "ZZ"}:
+            result = dynamodb.update_item(
+                TableName=TABLE_NAME,
+                Key={"id": {"S": "visitor_countries"}},
+                UpdateExpression="ADD #countries :country",
+                ExpressionAttributeNames={"#countries": "countries"},
+                ExpressionAttributeValues={":country": {"SS": [country]}},
+                ReturnValues="ALL_NEW",
+            )
+            countries = result.get("Attributes", {}).get("countries", {}).get("SS", [])
+        else:
+            result = dynamodb.get_item(
+                TableName=TABLE_NAME,
+                Key={"id": {"S": "visitor_countries"}},
+            )
+            countries = result.get("Item", {}).get("countries", {}).get("SS", [])
+    except Exception as error:
+        # A country lookup failure must not retry or hide a successful count.
+        print(f"Country tracking unavailable: {error}")
+
+    body = {"visitor_count": total_count}
+    if countries is not None:
+        body["countries"] = sorted(countries)
+
     return {
         "statusCode": 200,
         "headers": {
             "Access-Control-Allow-Origin": "*",
+            "Cache-Control": "no-store",
             "Access-Control-Allow-Methods": "GET,OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
         },
-        "body": json.dumps({"visitor_count": total_count}),
+        "body": json.dumps(body),
     }

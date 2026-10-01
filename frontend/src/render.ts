@@ -432,9 +432,17 @@ export function WebResume(resume: Resume, content: Content) {
     </header>
     <main id="main-content" tabindex="-1">${sections}</main>
     <footer>
-      <p>
-        ${e(resume.person.name)} <span>· ${e(resume.person.location)}</span>
-      </p>
+      <div>
+        <p>
+          ${e(resume.person.name)} <span>· ${e(resume.person.location)}</span>
+        </p>
+        <aside
+          id="visitor-stats"
+          class="visitor-stats"
+          aria-label="Site visitors"
+          aria-live="polite"
+        ></aside>
+      </div>
       <a
         href="?role=${resume.view === "full" ? "software" : "full"}"
         data-background

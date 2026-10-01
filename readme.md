@@ -50,7 +50,11 @@ Document titles, descriptions, Open Graph tags, and structured data update in th
 
 The existing GitHub Actions frontend pipeline installs with Yarn, builds `frontend/dist`, syncs it to the existing S3 prefix, and invalidates CloudFront. Deployment destinations and AWS configuration remain unchanged. Build-time content validation and typechecking prevent invalid resumes from reaching the sync step.
 
-The existing `backend/lambda_cloudresume/` Python visitor counter and `backend/terraform/` infrastructure are unchanged. Backend tests remain:
+The compact visitor line in the resume footer calls the existing CloudFront `/visitor` endpoint once per page load. The global count retains the existing DynamoDB `total` item and daily IP session behavior. Countries are collected from CloudFront's `CloudFront-Viewer-Country` header into an atomic string set on a separate `visitor_countries` item; only observed countries are returned and displayed. Historical visits have no country data and are not backfilled. Missing country data never suppresses the total.
+
+Deploy both the frontend and Lambda changes through the existing pipelines. No table replacement, reset, or Terraform change is required: country headers and DynamoDB permissions are already configured. The frontend also works with the older API while the backend deployment completes. API failures show an unavailable state without blocking the resume; visitor statistics are excluded from print layouts.
+
+Backend tests:
 
 ```sh
 cd backend/lambda_cloudresume

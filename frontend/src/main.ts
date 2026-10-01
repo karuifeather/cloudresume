@@ -1,6 +1,7 @@
 import content from "virtual:resume-content";
 import { createResumeEngine, viewFromUrl } from "./content/engine";
 import { WebResume, PrintResume } from "./render";
+import { loadVisitorStats, renderVisitorStats } from "./visitors";
 import "./styles.css";
 import "./print.css";
 
@@ -19,6 +20,7 @@ function render() {
   const resume = engine.getResume(view);
 
   web.innerHTML = WebResume(resume, content);
+  renderVisitorStats();
   print.innerHTML = PrintResume(engine.getResume(view, true), content);
 
   const preview = url.searchParams.get("view") === "print";
@@ -165,3 +167,5 @@ window.addEventListener("beforeprint", () => {
 });
 
 render();
+
+void loadVisitorStats();
