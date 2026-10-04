@@ -1,0 +1,28 @@
+name: Refresh Portfolio Assistant
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/content/**"
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger assistant knowledge release
+        env:
+          GH_TOKEN: ${{ secrets.ASSISTANT_WORKFLOW_TOKEN }}
+        run: |
+          curl --fail-with-body \
+            --request POST \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2026-03-10" \
+            https://api.github.com/repos/karuifeather/assistant/actions/workflows/knowledge-release.yml/dispatches \
+            --data '{"ref":"main"}'
