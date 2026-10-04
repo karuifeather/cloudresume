@@ -5,6 +5,7 @@ dates:
   - "2022"
   - "2023"
   - "2025"
+  - "2026"
 tracks:
   software:
     visibility: normal
