@@ -45,9 +45,7 @@ print:
     M.S. Computer Science candidate experienced in security monitoring, IAM/access reviews, risk
     assessment, and network defense. Built and evaluated IDS/IPS, VPN, and monitoring systems with Suricata,
     Zeek, AWS, Linux, and Python.
-  experienceBulletLimits:
-    mein-bowl-team-lead: 2
-  experiences: 2
+  experiences: 1
 web:
   projectsMinVisibility: normal
   skillsMinVisibility: normal

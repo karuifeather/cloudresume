@@ -148,7 +148,7 @@ test("experience uses dates regardless of relevance, with visibility applied fir
 });
 
 test("web, print, and Full Background render the chronological work timeline", () => {
-  const expected = ["jsu-research-assistant", "mein-bowl-team-lead"];
+  const expected = ["jsu-research-assistant"];
   for (const view of [
     "software",
     "data-ai",
@@ -221,6 +221,16 @@ test("profiles change experience, projects, skills, capabilities and print", () 
   }
 
   assert.equal(engine.getProjects("full").length, 10);
+});
+
+test("print publications use compact citations while web keeps details", () => {
+  const print = PrintResume(engine.getResume("cybersecurity", true), data);
+  const web = WebResume(engine.getResume("cybersecurity"), data);
+
+  assert.ok(print.includes("Eric Gamess et al."));
+  assert.ok(!print.includes("Published ACM research evaluating"));
+  assert.ok(!print.includes("DOI:"));
+  assert.ok(web.includes("Published ACM research evaluating"));
 });
 
 test("new YAML certification and publication automatically render on web, print, and full", () =>
@@ -390,51 +400,3 @@ test("unknown print skill-group reference fails validation", () =>
       /print.skillGroups: unknown reference/,
     );
   }));
-
-test("campus dining uses shared facts with track-specific selection", () => {
-  const jobId = "mein-bowl-team-lead";
-  const expectedBullets = {
-    software: ["team-leadership", "operational-systems"],
-    "data-ai": ["demand-planning", "operational-systems"],
-    cybersecurity: ["team-leadership", "operational-systems"],
-  };
-
-  for (const role of ["software", "data-ai", "cybersecurity"] as const) {
-    const resume = engine.getResume(role);
-    const job = resume.experience.find((entry) => entry.id === jobId)!;
-    const printed = engine.getResume(role, true);
-    const printedJob = printed.experience.find((entry) => entry.id === jobId)!;
-
-    assert.equal(job.role, "Team Lead");
-    assert.equal(job.name, "Mein Bowl, Campus Dining");
-    assert.equal(job.start, "2021-08");
-    assert.equal(job.end, "2025-05");
-    assert.deepEqual(
-      job.bullets.map((bullet) => bullet.id),
-      expectedBullets[role],
-    );
-    assert.equal(printedJob.bullets.length, role === "software" ? 1 : 2);
-    assert.equal(printed.experience[1].id, jobId);
-
-    for (const html of [WebResume(resume, data), PrintResume(printed, data)]) {
-      assert.ok(html.includes("Aug 2021 – May 2025"));
-    }
-  }
-
-  const dataJob = engine
-    .getResume("data-ai")
-    .experience.find((job) => job.id === jobId)!;
-  assert.ok(
-    dataJob.bullets[1].text.includes("**Excel-based operational data**"),
-  );
-
-  const fullJob = engine
-    .getResume("full")
-    .experience.find((job) => job.id === jobId)!;
-  assert.equal(fullJob.bullets.length, 3);
-  assert.ok(
-    fullJob.bullets.some((bullet) =>
-      bullet.text.includes("routine technical troubleshooting"),
-    ),
-  );
-});

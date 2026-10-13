@@ -47,11 +47,6 @@ bullets:
       cybersecurity:
         visibility: normal
         priority: 80
-    variants:
-      software: >-
-        Built a local-first coding platform with browser-based
-        execution, automated testing, live previews, visual
-        collaboration, and durable offline storage.
 
   - id: featherspace-accomplishment-2
     text: >-
@@ -89,7 +84,7 @@ bullets:
         priority: 95
     variants:
       software: >-
-        Engineered encrypted Yjs CRDT/WebRTC collaboration
+        Engineered encrypted **Yjs CRDT/WebRTC collaboration**
         with reliable synchronization, bounded backpressure,
         and reconnect recovery.
 

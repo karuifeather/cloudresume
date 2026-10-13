@@ -302,6 +302,10 @@ function publicationDetails(
   item: Content["publications"][number],
   print: boolean,
 ) {
+  if (print) {
+    return "";
+  }
+
   const summary =
     item.summary || item.abstract
       ? /* HTML */ `<p>${e(item.summary ?? item.abstract)}</p>`
@@ -336,9 +340,9 @@ function publications(resume: Resume, print: boolean) {
             <h3>
               ${item.paperUrl ? /* HTML */ `<a href="${e(item.paperUrl)}">${e(item.title)}</a>` : e(item.title)}
             </h3>
-            <p>
-              ${item.authors.map(e).join(", ")} ·
-              ${item.year}${item.venue ? ` · ${e(item.venue)}` : ""} ·
+            <p class="publication-meta">
+              ${print && item.authors.length > 2 ? `${e(item.authors[0])} et al.` : item.authors.map(e).join(", ")}
+              · ${item.year}${item.venue ? ` · ${e(item.venue)}` : ""} ·
               ${e(item.status.replace("-", " "))}
             </p>
             ${publicationDetails(item, print)}

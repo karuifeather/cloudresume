@@ -54,9 +54,7 @@ print:
   summary:
     Software engineer building full-stack applications and distributed systems with TypeScript, React,
     Java, Spring Boot, AWS, and Cloudflare. Hands-on networking research, Linux, benchmarking, and production operations.
-  experienceBulletLimits:
-    mein-bowl-team-lead: 1
-  experiences: 2
+  experiences: 1
 web:
   projectsMinVisibility: normal
   skillsMinVisibility: normal

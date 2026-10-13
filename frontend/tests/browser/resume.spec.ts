@@ -173,9 +173,6 @@ for (const [role, title, pages] of [
     expect(urls).toContain("https://karuifeather.com");
     expect(text).not.toContain("Tailor this resume");
     expect(text).not.toContain("Print / Save PDF");
-    expect(text).toContain("Mein Bowl, Campus Dining");
-    expect(text).toContain("Team Lead");
-    expect(text).toContain("Aug 2021 – May 2025");
     expect(text).toContain("AWS Certified Cloud Practitioner");
     expect(text).toContain("Dec 2026");
     expect(errors).toEqual([]);

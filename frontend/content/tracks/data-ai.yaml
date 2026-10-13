@@ -43,9 +43,7 @@ print:
     - Analytics & modeling
   minVisibility: normal
   projectsOnNewPage: true
-  experienceBulletLimits:
-    mein-bowl-team-lead: 2
-  experiences: 2
+  experiences: 1
 web:
   projectsMinVisibility: normal
   skillsMinVisibility: normal
