@@ -1,0 +1,43 @@
+id: suricata-ids-ips-raspberry-pi-5
+title: Performance Evaluation of Suricata IDS/IPS on Raspberry Pi 5 for Resource-Constrained Network Security
+
+authors:
+  - Eric Gamess
+  - Yunus Korku
+  - Aashaya Aryal
+
+year: 2026
+status: submitted
+venue: 15th International Conference on Information Communication and Management (ICICM 2026)
+
+active: true
+priority: 95
+
+tracks:
+  software:
+    visibility: normal
+    priority: 85
+  data-ai:
+    visibility: normal
+    priority: 85
+  cybersecurity:
+    visibility: featured
+    priority: 100
+
+summary: >-
+  Research evaluating the performance and feasibility of
+  Suricata intrusion detection and prevention on Raspberry Pi 5
+  hardware for resource-constrained network security,
+  examining network throughput, resource utilization,
+  and performance limitations.
+
+topics:
+  - Network Security
+  - Intrusion Detection Systems
+  - Intrusion Prevention Systems
+  - Suricata
+  - Raspberry Pi 5
+  - Linux
+  - Network Performance
+  - Performance Benchmarking
+  - Resource-Constrained Computing

@@ -1,0 +1,201 @@
+id: karuifeather
+name: Karuifeather.com
+active: true
+
+tracks:
+  software:
+    visibility: featured
+    priority: 95
+  data-ai:
+    visibility: featured
+    priority: 90
+  cybersecurity:
+    visibility: secondary
+    priority: 75
+
+skills:
+  - react
+  - typescript
+  - vite
+  - node-js
+  - aws
+  - s3
+  - cloudfront
+  - route53
+  - lambda
+  - api-gateway
+  - ses
+  - github-actions
+  - terraform
+  - rag
+  - llm
+  - serverless
+  - ci-cd
+
+bullets:
+  - id: karuifeather-accomplishment-1
+    text: >-
+      Architected and deployed a **multi-repository software
+      platform** integrating a React portfolio, CloudResume,
+      content publishing system, asset CDN, and AI-powered
+      assistant into a unified production application.
+    tracks:
+      software:
+        visibility: featured
+        priority: 100
+      data-ai:
+        visibility: featured
+        priority: 90
+      cybersecurity:
+        visibility: normal
+        priority: 75
+    variants:
+      software: >-
+        Engineered a production **multi-repository React
+        platform**, integrating independently maintained
+        applications, automated publishing, and AI-powered
+        features into one web experience.
+
+  - id: karuifeather-accomplishment-2
+    text: >-
+      Built a **content-driven React and TypeScript application**
+      using Vite, structured YAML/Markdown sources, generated
+      content snapshots, and prerendering to support reusable
+      content and automated publishing without a traditional CMS.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 85
+      cybersecurity:
+        visibility: normal
+        priority: 65
+
+  - id: karuifeather-accomplishment-3
+    text: >-
+      Developed and deployed a **retrieval-augmented AI
+      assistant** using a private S3 knowledge base, structured
+      resume/project data, document chunking, retrieval
+      evaluation, and grounded response generation; achieved
+      **37/37 grounded responses** in deterministic validation.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: featured
+        priority: 100
+      cybersecurity:
+        visibility: normal
+        priority: 80
+    variants:
+      software: >-
+        Built and deployed a portfolio AI assistant with
+        structured knowledge retrieval, grounded responses,
+        and serverless API integration.
+      data-ai: >-
+        Engineered a RAG assistant with private S3 knowledge
+        storage, chunking, retrieval evaluation, and grounded
+        generation, achieving 37/37 grounded deterministic
+        evaluation cases.
+
+  - id: karuifeather-accomplishment-4
+    text: >-
+      Designed a **serverless AWS application architecture**
+      using S3, CloudFront, Route 53, API Gateway, Lambda,
+      and SES, separating static hosting, API processing,
+      and email delivery without always-on compute.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 85
+      cybersecurity:
+        visibility: normal
+        priority: 80
+    variants:
+      software: >-
+        Built serverless backend APIs with AWS Lambda,
+        API Gateway, and SES, integrated with a React
+        application hosted through S3 and CloudFront.
+
+  - id: karuifeather-accomplishment-5
+    text: >-
+      Engineered a **dedicated asset CDN** at
+      cdn.karuifeather.com using Amazon S3 and CloudFront,
+      decoupling asset distribution from application hosting
+      with independently cacheable static content.
+    tracks:
+      software:
+        visibility: featured
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 65
+      cybersecurity:
+        visibility: normal
+        priority: 75
+
+  - id: karuifeather-accomplishment-6
+    text: >-
+      Implemented **cross-repository CI/CD automation**
+      with GitHub Actions to coordinate content generation,
+      application builds, and AWS deployments across
+      independently maintained codebases.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 80
+      cybersecurity:
+        visibility: normal
+        priority: 80
+    variants:
+      software: >-
+        Automated cross-repository publishing and production
+        deployments using GitHub Actions, connecting content
+        generation, frontend builds, and AWS delivery.
+
+  - id: karuifeather-accomplishment-7
+    text: >-
+      Integrated a **YAML-driven CloudResume** as a reusable
+      structured data source for resume publishing, portfolio
+      content, and AI knowledge retrieval, reducing duplicated
+      profile information across independently maintained systems.
+    tracks:
+      software:
+        visibility: normal
+        priority: 85
+      data-ai:
+        visibility: featured
+        priority: 90
+      cybersecurity:
+        visibility: normal
+        priority: 60
+
+  - id: karuifeather-accomplishment-8
+    text: >-
+      Optimized the AI assistant for **grounding and operational
+      cost**, evaluating retrieval quality and comparing
+      LLM-based generation with deterministic response strategies;
+      validated a zero-inference-call configuration across
+      37 grounded test cases.
+    tracks:
+      software:
+        visibility: normal
+        priority: 90
+      data-ai:
+        visibility: featured
+        priority: 95
+      cybersecurity:
+        visibility: normal
+        priority: 75
+
+subtitle: Multi-Repository Cloud Portfolio & AI Platform
+url: https://karuifeather.com

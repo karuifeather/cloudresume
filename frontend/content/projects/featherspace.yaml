@@ -1,6 +1,7 @@
 id: featherspace
 name: FeatherSpace
 active: true
+
 tracks:
   software:
     visibility: featured
@@ -11,6 +12,7 @@ tracks:
   cybersecurity:
     visibility: secondary
     priority: 100
+
 skills:
   - react
   - typescript
@@ -27,11 +29,14 @@ skills:
   - aes-gcm
   - vitest
   - playwright
+
 bullets:
   - id: featherspace-accomplishment-1
-    text:
-      Architected and shipped a browser coding workspace with JavaScript/Python scratchpads, test
-      execution, live HTML/CSS/JS preview, a visual board, and durable **IndexedDB/OPFS** storage.
+    text: >-
+      Architected and shipped a **local-first coding platform**
+      with JavaScript/Python execution, automated test cases,
+      live web previews, visual collaboration, and durable
+      offline storage using IndexedDB and OPFS.
     tracks:
       software:
         visibility: featured
@@ -41,41 +46,145 @@ bullets:
         priority: 100
       cybersecurity:
         visibility: normal
-        priority: 100
+        priority: 80
     variants:
-      software:
-        Shipped a browser coding workspace with JavaScript/Python scratchpads, test execution, live
-        previews, and durable **IndexedDB/OPFS** storage.
+      software: >-
+        Built a local-first coding platform with browser-based
+        execution, automated testing, live previews, visual
+        collaboration, and durable offline storage.
+
   - id: featherspace-accomplishment-2
-    text: Built in-browser execution with CodeMirror 6 and esbuild-wasm in a Web Worker.
+    text: >-
+      Engineered **browser-based code execution** using
+      CodeMirror 6, esbuild-wasm, Web Workers, and isolated
+      runtimes, supporting interactive JavaScript/Python
+      development and reproducible test workflows.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 80
+      cybersecurity:
+        visibility: normal
+        priority: 85
+
   - id: featherspace-accomplishment-3
-    text:
-      Engineered **Yjs CRDT/WebRTC** collaboration with WebSocket signaling, TURN traversal, follow mode,
-      and reconnect recovery.
+    text: >-
+      Built **end-to-end encrypted real-time collaboration**
+      using Yjs CRDTs, WebRTC, WebSocket signaling, and TURN
+      traversal; implemented bounded transport queues,
+      backpressure, receiver acknowledgments, and reconnect
+      recovery for reliable synchronization.
     tracks:
       software:
         visibility: featured
-        priority: 95
+        priority: 100
       data-ai:
         visibility: normal
-        priority: 95
+        priority: 80
       cybersecurity:
-        visibility: normal
+        visibility: featured
         priority: 95
+    variants:
+      software: >-
+        Engineered encrypted Yjs CRDT/WebRTC collaboration
+        with reliable synchronization, bounded backpressure,
+        and reconnect recovery.
+
   - id: featherspace-accomplishment-4
-    text:
-      Secured sessions with **AES-GCM** end-to-end encryption, safe key handling, telemetry sanitization,
-      CSP/HSTS controls, and Vitest/Playwright coverage for synchronization, performance, memory, and
-      reliability.
+    text: >-
+      Optimized application startup through **64-shard content
+      indexing and lazy loading**, reducing first-problem
+      readiness from 459.3 ms to 33.0 ms (**93% faster**) and
+      welcome-page idle JavaScript by **82.1%**.
     tracks:
       software:
-        visibility: normal
+        visibility: featured
         priority: 100
       data-ai:
         visibility: normal
-        priority: 100
+        priority: 70
+      cybersecurity:
+        visibility: normal
+        priority: 70
+
+  - id: featherspace-accomplishment-5
+    text: >-
+      Optimized visual board rendering with stable draw-order
+      sorting, reducing sorting time for **10,000 equal-z nodes**
+      from 24.730 ms to 0.362 ms (**68.22x speedup**) in
+      benchmark testing.
+    tracks:
+      software:
+        visibility: featured
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 65
+      cybersecurity:
+        visibility: normal
+        priority: 60
+
+  - id: featherspace-accomplishment-6
+    text: >-
+      Designed a **compact encrypted binary asset protocol**
+      reducing representative transfer payloads by approximately
+      **90%**; improved IndexedDB-authoritative persistence,
+      eliminating approximately 50% of duplicated logical asset
+      payload writes while preserving legacy OPFS compatibility.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 70
+      cybersecurity:
+        visibility: featured
+        priority: 90
+
+  - id: featherspace-accomplishment-7
+    text: >-
+      Engineered **Cloudflare-based CI/CD and release
+      infrastructure** with dependency-aware deployments,
+      release provenance verification, fail-closed health
+      checks, rollback safeguards, and alarm-driven recovery
+      for signaling services.
+    tracks:
+      software:
+        visibility: featured
+        priority: 95
+      data-ai:
+        visibility: normal
+        priority: 75
+      cybersecurity:
+        visibility: featured
+        priority: 90
+    variants:
+      software: >-
+        Built automated Cloudflare deployment pipelines with
+        release verification, health checks, rollback safeguards,
+        and operational recovery.
+
+  - id: featherspace-accomplishment-8
+    text: >-
+      Hardened application security with **AES-GCM encrypted
+      synchronization**, SHA-256 integrity verification,
+      sandboxed execution, safe key handling, CSP/HSTS
+      controls, and telemetry redaction; validated critical
+      workflows with Vitest and Playwright.
+    tracks:
+      software:
+        visibility: normal
+        priority: 90
+      data-ai:
+        visibility: normal
+        priority: 70
       cybersecurity:
         visibility: featured
         priority: 100
+
 subtitle: Local-First Collaborative Coding Workspace
 url: https://featherspace.dev

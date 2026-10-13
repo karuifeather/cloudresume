@@ -148,12 +148,7 @@ test("experience uses dates regardless of relevance, with visibility applied fir
 });
 
 test("web, print, and Full Background render the chronological work timeline", () => {
-  const expected = [
-    "jsu-research-assistant",
-    "mein-bowl-team-lead",
-    "bidhee-java-developer",
-    "upwork-fullstack",
-  ];
+  const expected = ["jsu-research-assistant", "mein-bowl-team-lead"];
   for (const view of [
     "software",
     "data-ai",
@@ -162,10 +157,7 @@ test("web, print, and Full Background render the chronological work timeline", (
   ] as const) {
     for (const print of [false, true]) {
       const resume = engine.getResume(view, print);
-      const ids =
-        (print && view !== "full") || view === "cybersecurity"
-          ? expected.slice(0, 3)
-          : expected;
+      const ids = expected;
       assert.deepEqual(
         resume.experience.map((j) => j.id),
         ids,
@@ -205,8 +197,8 @@ test("profiles change experience, projects, skills, capabilities and print", () 
   const cyber = engine.getResume("cybersecurity");
 
   assert.equal(software.projects[0].id, "featherspace");
-  assert.equal(dataAI.projects[0].id, "network-intrusion-detection");
-  assert.equal(cyber.projects[0].id, "guardianlens");
+  assert.equal(dataAI.projects[0].id, "karuifeather");
+  assert.equal(cyber.projects[0].id, "network-intrusion-detection");
   assert.notDeepEqual(
     software.experience[0].bullets,
     dataAI.experience[0].bullets,
@@ -258,8 +250,8 @@ test("new YAML certification and publication automatically render on web, print,
       );
     }
 
-    assert.equal(instance.getPublications("cybersecurity").length, 0);
-    assert.equal(instance.getPublications("full").length, 1);
+    assert.equal(instance.getPublications("cybersecurity").length, 2);
+    assert.equal(instance.getPublications("full").length, 3);
   }));
 
 test("bad content fails with source and field details", () => {

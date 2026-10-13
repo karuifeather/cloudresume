@@ -1,0 +1,40 @@
+id: raspberry-pi-ethernet-capabilities
+title: Exploring the Ethernet Capabilities of the Raspberry Pi 4B/5
+authors:
+  - Eric Gamess
+  - Aashaya Aryal
+  - Yunus Korku
+year: 2026
+status: published
+venue: Proceedings of the 2026 ACM Southeast Conference (ACMSE 2026)
+doi: 10.1145/3746467.3801537
+paperUrl: https://doi.org/10.1145/3746467.3801537
+active: true
+priority: 100
+
+tracks:
+  software:
+    visibility: featured
+    priority: 90
+  data-ai:
+    visibility: normal
+    priority: 85
+  cybersecurity:
+    visibility: featured
+    priority: 95
+
+summary: >-
+  Published ACM research evaluating Ethernet throughput, network
+  interface aggregation, and communication latency across the
+  Raspberry Pi 4B and Raspberry Pi 5, identifying performance
+  limitations and system-level bottlenecks.
+
+topics:
+  - Computer Networking
+  - Network Performance
+  - Linux
+  - Raspberry Pi
+  - Ethernet
+  - Link Aggregation
+  - Performance Benchmarking
+  - Embedded Systems

@@ -45,7 +45,7 @@ print:
   projectsOnNewPage: true
   experienceBulletLimits:
     mein-bowl-team-lead: 2
-  experiences: 3
+  experiences: 2
 web:
   projectsMinVisibility: normal
   skillsMinVisibility: normal

@@ -56,9 +56,7 @@ print:
     Java, Spring Boot, AWS, and Cloudflare. Hands-on networking research, Linux, benchmarking, and production operations.
   experienceBulletLimits:
     mein-bowl-team-lead: 1
-    bidhee-java-developer: 2
-    upwork-fullstack: 1
-  experiences: 3
+  experiences: 2
 web:
   projectsMinVisibility: normal
   skillsMinVisibility: normal
