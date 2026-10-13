@@ -36,12 +36,7 @@ const metadata = (
 ) => ({ visibility, priority });
 
 test("URL defaults and direct profiles", () => {
-  for (const role of [
-    "software",
-    "data-ai",
-    "cybersecurity",
-    "full",
-  ] as const) {
+  for (const role of ["software", "data-ai", "full"] as const) {
     assert.equal(
       viewFromUrl(new URL(`https://example.test/?role=${role}`)),
       role,
@@ -149,12 +144,7 @@ test("experience uses dates regardless of relevance, with visibility applied fir
 
 test("web, print, and Full Background render the chronological work timeline", () => {
   const expected = ["jsu-research-assistant"];
-  for (const view of [
-    "software",
-    "data-ai",
-    "cybersecurity",
-    "full",
-  ] as const) {
+  for (const view of ["software", "data-ai", "full"] as const) {
     for (const print of [false, true]) {
       const resume = engine.getResume(view, print);
       const ids = expected;
@@ -194,25 +184,20 @@ test("bullet variants and canonical fallback", () => {
 test("profiles change experience, projects, skills, capabilities and print", () => {
   const software = engine.getResume("software");
   const dataAI = engine.getResume("data-ai");
-  const cyber = engine.getResume("cybersecurity");
 
   assert.equal(software.projects[0].id, "featherspace");
   assert.equal(dataAI.projects[0].id, "karuifeather");
-  assert.equal(cyber.projects[0].id, "network-intrusion-detection");
   assert.notDeepEqual(
     software.experience[0].bullets,
     dataAI.experience[0].bullets,
   );
-  assert.notDeepEqual(software.skills, cyber.skills);
+  assert.notDeepEqual(software.skills, dataAI.skills);
   assert.equal(software.profile.capabilities.length, 3);
 
-  for (const role of ["software", "data-ai", "cybersecurity"] as const) {
+  for (const role of ["software", "data-ai"] as const) {
     const resume = engine.getResume(role, true);
 
-    assert.equal(
-      resume.projects.length,
-      role === "data-ai" ? 6 : role === "software" ? 3 : 2,
-    );
+    assert.equal(resume.projects.length, role === "data-ai" ? 6 : 3);
 
     const html = PrintResume(resume, data);
 
@@ -224,8 +209,8 @@ test("profiles change experience, projects, skills, capabilities and print", () 
 });
 
 test("print publications use compact citations while web keeps details", () => {
-  const print = PrintResume(engine.getResume("cybersecurity", true), data);
-  const web = WebResume(engine.getResume("cybersecurity"), data);
+  const print = PrintResume(engine.getResume("data-ai", true), data);
+  const web = WebResume(engine.getResume("data-ai"), data);
 
   assert.ok(print.includes("Eric Gamess et al."));
   assert.ok(!print.includes("Published ACM research evaluating"));
@@ -260,7 +245,7 @@ test("new YAML certification and publication automatically render on web, print,
       );
     }
 
-    assert.equal(instance.getPublications("cybersecurity").length, 2);
+    assert.equal(instance.getPublications("data-ai").length, 2);
     assert.equal(instance.getPublications("full").length, 3);
   }));
 
@@ -359,7 +344,7 @@ test("explicit emphasis is safe and works in canonical and variant bullets", () 
 });
 
 test("track priorities and Software print skill groups retain canonical references", () => {
-  const ids = (role: "software" | "data-ai" | "cybersecurity") =>
+  const ids = (role: "software" | "data-ai") =>
     engine.getResume(role, true).experience[0].bullets.map((b) => b.id);
 
   assert.deepEqual(ids("software"), [
@@ -372,8 +357,6 @@ test("track priorities and Software print skill groups retain canonical referenc
     "benchmark-harness",
     "suricata-benchmark",
   ]);
-  assert.deepEqual(ids("cybersecurity"), ["suricata-benchmark", "testbed"]);
-
   const groups = engine.getResume("software", true).skills;
 
   assert.deepEqual(

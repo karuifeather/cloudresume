@@ -20,9 +20,6 @@ tracks:
   data-ai:
     visibility: normal
     priority: 85
-  cybersecurity:
-    visibility: featured
-    priority: 100
 
 summary: >-
   Research evaluating the performance and feasibility of

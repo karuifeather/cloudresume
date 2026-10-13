@@ -1,17 +1,15 @@
 id: karuifeather
 name: Karuifeather.com
 active: true
+priority: 95
 
 tracks:
   software:
     visibility: featured
     priority: 95
   data-ai:
-    visibility: featured
-    priority: 90
-  cybersecurity:
     visibility: secondary
-    priority: 75
+    priority: 90
 
 skills:
   - react
@@ -46,9 +44,6 @@ bullets:
       data-ai:
         visibility: featured
         priority: 90
-      cybersecurity:
-        visibility: normal
-        priority: 75
     variants:
       software: >-
         Engineered a production **multi-repository React
@@ -69,9 +64,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 85
-      cybersecurity:
-        visibility: normal
-        priority: 65
 
   - id: karuifeather-accomplishment-3
     text: >-
@@ -87,9 +79,6 @@ bullets:
       data-ai:
         visibility: featured
         priority: 100
-      cybersecurity:
-        visibility: normal
-        priority: 80
     variants:
       software: >-
         Built and deployed a portfolio AI assistant with
@@ -114,9 +103,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 85
-      cybersecurity:
-        visibility: normal
-        priority: 80
     variants:
       software: >-
         Built serverless backend APIs with AWS Lambda,
@@ -136,9 +122,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 65
-      cybersecurity:
-        visibility: normal
-        priority: 75
 
   - id: karuifeather-accomplishment-6
     text: >-
@@ -151,9 +134,6 @@ bullets:
         visibility: featured
         priority: 95
       data-ai:
-        visibility: normal
-        priority: 80
-      cybersecurity:
         visibility: normal
         priority: 80
     variants:
@@ -175,9 +155,6 @@ bullets:
       data-ai:
         visibility: featured
         priority: 90
-      cybersecurity:
-        visibility: normal
-        priority: 60
 
   - id: karuifeather-accomplishment-8
     text: >-
@@ -193,9 +170,6 @@ bullets:
       data-ai:
         visibility: featured
         priority: 95
-      cybersecurity:
-        visibility: normal
-        priority: 75
 
 subtitle: Multi-Repository Cloud Portfolio & AI Platform
 url: https://karuifeather.com

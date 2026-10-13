@@ -9,6 +9,3 @@ tracks:
   data-ai:
     visibility: secondary
     priority: 10
-  cybersecurity:
-    visibility: secondary
-    priority: 10

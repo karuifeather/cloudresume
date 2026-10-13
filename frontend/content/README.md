@@ -8,7 +8,7 @@ Every `.yaml` / `.yml` file is discovered recursively at build time. No imports 
 - One major item per file; use a unique lowercase, hyphenated `id` within each collection.
 - Dates are quoted `"YYYY"` or `"YYYY-MM"`; employment end can be `present`. Publication/project years are integers.
 - `active: true` is the default. Set `active: false` to archive a record everywhere, including Full Background.
-- `tracks` contains any of `software`, `data-ai`, `cybersecurity`. A missing track means hidden in that targeted view.
+- `tracks` contains any of `software` or `data-ai`. A missing track means hidden in that targeted view.
 - Each track entry requires `visibility: featured | normal | secondary | hidden`; `priority` is an integer, default 0.
 - Experience is filtered by track visibility, then sorted by end date descending (Present first), start date descending, and ID for ties, before print limits are applied. This applies to web, print, and Full Background. Priority never reorders jobs; bullet selection and wording remain track-specific.
 - For projects and other relevance-ranked sections, featured comes first, then normal, then secondary. Within each group: priority descending, date descending, ID ascending. Higher priority moves an item earlier.
@@ -80,9 +80,9 @@ Without a variant, canonical `text` is used. Full Background always uses canonic
 
 ## Presentation and print
 
-`profile.yaml` holds contact facts and institution-level coursework. `tracks/*.yaml` holds audience-specific titles, summaries, three capabilities, and print budgets. The shared engine in `src/content/engine.ts` selects content for both renderers. Print configuration controls the summary, experience count, per-job bullet overrides (`experienceBulletLimits` keyed by job ID), project count, bullet counts, skill categories, and skills per category. All three tracks print the current experience. Software prints three selected projects, Cybersecurity prints two, and Data/AI prints six projects on a dedicated second page. Other relevant projects remain on the web.
+`profile.yaml` holds contact facts and institution-level coursework. `tracks/*.yaml` holds audience-specific titles, summaries, three capabilities, and print budgets. The shared engine in `src/content/engine.ts` selects content for both renderers. Print configuration controls the summary, experience count, per-job bullet overrides (`experienceBulletLimits` keyed by job ID), project count, bullet counts, skill categories, and skills per category. Both tracks print the current experience. Software prints three selected projects, and Data/AI prints six projects on a dedicated second page. Other relevant projects remain on the web.
 
-`?role=software`, `?role=data-ai`, `?role=cybersecurity`, and `?role=full` work with static hosting. Root defaults to software. `&view=print` opens a preview; Print / Save PDF uses the dedicated print renderer, even from the normal website.
+`?role=software`, `?role=data-ai`, and `?role=full` work with static hosting. Root defaults to software. `&view=print` opens a preview; Print / Save PDF uses the dedicated print renderer, even from the normal website.
 
 Print in Chrome, US Letter, scale 100%, browser headers/footers off. Adding content can change pagination: run `yarn test:browser` after meaningful content changes, review its PDFs, and adjust selection budgets in track config. Print never truncates overflowing text. Full Background has no page budget.
 

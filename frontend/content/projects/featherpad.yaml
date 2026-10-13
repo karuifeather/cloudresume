@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: secondary
     priority: 90
-  cybersecurity:
-    visibility: secondary
-    priority: 90
 skills:
   - react
   - typescript

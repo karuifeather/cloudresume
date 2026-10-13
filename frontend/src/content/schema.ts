@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const trackIds = ["software", "data-ai", "cybersecurity"] as const;
+export const trackIds = ["software", "data-ai"] as const;
 
 export const trackId = z.enum(trackIds);
 
@@ -36,7 +36,6 @@ const tracks = z
   .object({
     software: metadata.optional(),
     "data-ai": metadata.optional(),
-    cybersecurity: metadata.optional(),
   })
   .strict();
 
@@ -44,7 +43,6 @@ const variants = z
   .object({
     software: text.optional(),
     "data-ai": text.optional(),
-    cybersecurity: text.optional(),
   })
   .strict();
 

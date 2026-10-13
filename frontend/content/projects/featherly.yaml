@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: secondary
     priority: 95
-  cybersecurity:
-    visibility: normal
-    priority: 95
 skills:
   - angular
   - nestjs
@@ -36,9 +33,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 100
-      cybersecurity:
-        visibility: normal
-        priority: 100
   - id: featherly-accomplishment-2
     text:
       Built multi-tenant authorization, JWT/httpOnly-cookie authentication, origin-locked CORS,
@@ -49,9 +43,6 @@ bullets:
         priority: 100
       data-ai:
         visibility: normal
-        priority: 100
-      cybersecurity:
-        visibility: featured
         priority: 100
   - id: featherly-accomplishment-3
     text: Integrated Stripe Billing/Connect payouts with signed, idempotent webhooks.
@@ -65,9 +56,6 @@ bullets:
         priority: 90
       data-ai:
         visibility: normal
-        priority: 90
-      cybersecurity:
-        visibility: featured
         priority: 90
     variants:
       software:

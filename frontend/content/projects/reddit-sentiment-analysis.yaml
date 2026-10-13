@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: featured
     priority: 65
-  cybersecurity:
-    visibility: hidden
-    priority: 65
 skills:
   - r
   - tidytext

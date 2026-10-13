@@ -1,6 +1,7 @@
 id: featherspace
 name: FeatherSpace
 active: true
+priority: 100
 
 tracks:
   software:
@@ -8,9 +9,6 @@ tracks:
     priority: 100
   data-ai:
     visibility: hidden
-    priority: 100
-  cybersecurity:
-    visibility: secondary
     priority: 100
 
 skills:
@@ -44,9 +42,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 100
-      cybersecurity:
-        visibility: normal
-        priority: 80
 
   - id: featherspace-accomplishment-2
     text: >-
@@ -61,9 +56,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 80
-      cybersecurity:
-        visibility: normal
-        priority: 85
 
   - id: featherspace-accomplishment-3
     text: >-
@@ -79,9 +71,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 80
-      cybersecurity:
-        visibility: featured
-        priority: 95
     variants:
       software: >-
         Engineered encrypted **Yjs CRDT/WebRTC collaboration**
@@ -101,9 +90,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 70
-      cybersecurity:
-        visibility: normal
-        priority: 70
 
   - id: featherspace-accomplishment-5
     text: >-
@@ -118,9 +104,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 65
-      cybersecurity:
-        visibility: normal
-        priority: 60
 
   - id: featherspace-accomplishment-6
     text: >-
@@ -136,9 +119,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 70
-      cybersecurity:
-        visibility: featured
-        priority: 90
 
   - id: featherspace-accomplishment-7
     text: >-
@@ -154,9 +134,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 75
-      cybersecurity:
-        visibility: featured
-        priority: 90
     variants:
       software: >-
         Built automated Cloudflare deployment pipelines with
@@ -177,9 +154,6 @@ bullets:
       data-ai:
         visibility: normal
         priority: 70
-      cybersecurity:
-        visibility: featured
-        priority: 100
 
 subtitle: Local-First Collaborative Coding Workspace
 url: https://featherspace.dev

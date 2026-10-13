@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: featured
     priority: 70
-  cybersecurity:
-    visibility: hidden
-    priority: 70
 skills:
   - python
   - tensorflow

@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: featured
     priority: 60
-  cybersecurity:
-    visibility: hidden
-    priority: 60
 skills:
   - sql-server
   - erds

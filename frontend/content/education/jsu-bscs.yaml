@@ -13,6 +13,3 @@ tracks:
   data-ai:
     visibility: normal
     priority: 90
-  cybersecurity:
-    visibility: normal
-    priority: 90

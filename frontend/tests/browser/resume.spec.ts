@@ -31,12 +31,6 @@ test("root, URL changes, keyboard switching, refresh and history", async ({
   await expect(page.locator(".role-title")).toHaveText(
     "Data Science & ML Engineer",
   );
-  await page
-    .getByRole("button", { name: "Cybersecurity", exact: true })
-    .click();
-  await expect(page.locator(".role-title")).toHaveText(
-    "Cybersecurity Engineer",
-  );
   await page.goBack();
   await expect(page.locator(".role-title")).toHaveText(
     "Data Science & ML Engineer",
@@ -52,7 +46,6 @@ test("root, URL changes, keyboard switching, refresh and history", async ({
 for (const [role, title, pages] of [
   ["software", "Software Engineer", 1],
   ["data-ai", "Data Science & ML Engineer", 2],
-  ["cybersecurity", "Cybersecurity Engineer", 1],
 ] as const) {
   test(`${role}: direct link, responsive selector and clean ${pages}-page PDF`, async ({
     page,
@@ -91,9 +84,6 @@ for (const [role, title, pages] of [
           () => document.documentElement.scrollWidth <= innerWidth,
         ),
       ).toBe(true);
-      await expect(
-        page.getByRole("button", { name: "Cybersecurity", exact: true }),
-      ).toBeVisible();
       await page.screenshot({ path: info.outputPath(`${role}-${width}.png`) });
     }
 
@@ -115,7 +105,6 @@ for (const [role, title, pages] of [
     const focus = {
       software: "SOFTWARE ENGINEERING | DISTRIBUTED SYSTEMS | CLOUD",
       "data-ai": "DATA SCIENCE | MACHINE LEARNING | DATA ENGINEERING",
-      cybersecurity: "CYBERSECURITY | NETWORK SECURITY | RISK & IAM",
     }[role];
 
     await expect(page.locator(".print-header h1 + .print-focus")).toHaveText(

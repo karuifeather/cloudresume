@@ -8,9 +8,6 @@ tracks:
   data-ai:
     visibility: featured
     priority: 55
-  cybersecurity:
-    visibility: hidden
-    priority: 55
 skills:
   - sql-server
   - ssis

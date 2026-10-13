@@ -19,9 +19,6 @@ tracks:
   data-ai:
     visibility: normal
     priority: 85
-  cybersecurity:
-    visibility: featured
-    priority: 95
 
 summary: >-
   Published ACM research evaluating Ethernet throughput, network

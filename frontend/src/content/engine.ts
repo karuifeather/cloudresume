@@ -99,7 +99,6 @@ export function getBullets(bullets: Bullet[], view: View, limit = Infinity) {
       tracks: b.tracks ?? {
         software: inherited,
         "data-ai": inherited,
-        cybersecurity: inherited,
       },
     })),
     view,
@@ -119,7 +118,7 @@ export function createResumeEngine(content: Content) {
       return {
         ...software,
         title: "Full Professional Background",
-        headline: "Software Engineering • Data / AI / ML • Cybersecurity",
+        headline: "Software Engineering • Data / AI / ML",
         summary: "",
         capabilities: [],
       };
@@ -235,10 +234,7 @@ export type Resume = ReturnType<
 export function viewFromUrl(url: URL): View {
   const role = url.searchParams.get("role");
 
-  return role === "software" ||
-    role === "data-ai" ||
-    role === "cybersecurity" ||
-    role === "full"
+  return role === "software" || role === "data-ai" || role === "full"
     ? role
     : "software";
 }

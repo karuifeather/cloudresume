@@ -382,8 +382,8 @@ export function WebResume(resume: Resume, content: Content) {
           ${[...content.tracks]
             .sort(
               (a, b) =>
-                ["software", "data-ai", "cybersecurity"].indexOf(a.id) -
-                ["software", "data-ai", "cybersecurity"].indexOf(b.id),
+                ["software", "data-ai"].indexOf(a.id) -
+                ["software", "data-ai"].indexOf(b.id),
             )
             .map(
               (t) =>
